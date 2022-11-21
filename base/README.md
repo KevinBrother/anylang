@@ -5,6 +5,8 @@
    gcc hello.c  // 会生成a.out
    ./a.out
     ```
+    gcc默认出来的是a.out, 可以通过 -o 定制名称：gcc hello.c -o hello.out
+    发现其实gcc -o 后任意的名字都可以，且都能运行
 
 2. double怎么只输出两位小数点
    ``` C
