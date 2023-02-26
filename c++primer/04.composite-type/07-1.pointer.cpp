@@ -16,7 +16,9 @@ int main(int argc, char const *argv[])
 
   // express values two ways
   cout << "values: update= " << update << endl;
-  cout << "value *p_update = " << *p_update << endl;
+  cout << "value p_update = " << p_update;
+  cout << " value *p_update = " << *p_update;
+  cout << " value (int *)p_update = " << (int *)p_update << endl;
 
   // express address two ways
   cout << "address: update= " << &update << endl;
