@@ -33,9 +33,9 @@ Time convertTime(long _seconds)
   const int oneMinute = 60;
 
   int days = _seconds / oneDay;
-  int hours = (_seconds - days * oneDay) / oneHour;
-  int minutes = (_seconds - days * oneDay - hours * oneMinute) / oneMinute;
-  int seconds = (_seconds - days * oneDay - hours * oneMinute - minutes * oneMinute);
+  int hours = _seconds % oneDay / oneHour;
+  int minutes = _seconds % oneHour / oneMinute;
+  int seconds = _seconds % oneMinute;
 
   Time time = {
       days,
