@@ -21,3 +21,5 @@ g++ xxx.cpp
 [ ]- 在函数外部给全局变量赋值，会报错？？
   [enum](./04.composite-type/06.enum.cpp)
   [此声明没有存储类或类型说明符](https://blog.csdn.net/qq_34911636/article/details/93162912)
+
+[ ] - [char 类型的指针变量输出的内存地址为什么乱码](./questionn/char-pointer.cpp)？
