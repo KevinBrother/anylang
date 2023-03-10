@@ -10,8 +10,19 @@ int main()
 
   cout << "请输入每次鱼的数量，回车开始下一次的输入" << endl;
   int i = 0;
-  while (++i <= MAX && cin >> fishes[i])
+
+  while (++i <= MAX)
   {
+    while (!(cin >> fishes[i]))
+    {
+      cin.clear();
+      while (cin.get() != '\n')
+      {
+        continue;
+      };
+      cout << "请输入一个数字： ";
+    }
+
     cout << "第" << i << "次打鱼的重量结果为：" << fishes[i] << endl;
   }
 
