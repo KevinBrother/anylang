@@ -25,3 +25,8 @@ g++ xxx.cpp
 [ ] - [char 类型的指针变量输出的内存地址为什么乱码](./questionn/char-pointer.cpp)？
 
 [ ] - [cin.get没整明白](./questionn/cin.cpp)
+
+[ ] - [输入被缓冲什么意思](./06.branch-logic/practise/3.test.cpp)
+
+[ ] - C++ 是什么时候调用的函数，是编译的时候 就已经把函数调用了？
+      - 如果不是，那对于编译来说为什么还要定义原型
