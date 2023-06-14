@@ -1,10 +1,30 @@
 # 我都搜了什么
 
+## 文档
+
+[菜鸟教程](https://www.runoob.com/cprogramming/c-tutorial.html)
+
+## windows的环境配置
+
+有多种方式
+第一种，直接安装到系统内
+[windows10下搭建C语言开发环境](https://www.jianshu.com/p/1d197e2487a1)
+[下载WinGw](https://sourceforge.net/projects/mingw/)
+第二种，安装到git bash内，这种方式可以替代第一种（推荐）
+[git bash安装gcc](https://zhuanlan.zhihu.com/p/149305469)
+第三中，安装到wsl中
+[WSL安装](https://zhuanlan.zhihu.com/p/90173113)
+[wsl安装gcc]()
+第四种，待尝试
+[GIT的社区维护版本，带了msys2](https://github.com/git-for-windows/git/wiki/Install-inside-MSYS2-proper)
+
 1. .C怎么运行  <https://zhidao.baidu.com/question/171627961.html>
+    编译并执行C程序(bash不能识别.out结尾的文件，所以需要制定 文件名生成)
 
     ``` bash
-   gcc hello.c  // 会生成a.out
-   ./a.out
+   # gcc hello.c  # 编译会生成a.out
+   #  ./a.out # 执行
+   gcc hello.c -o hello
     ```
 
     gcc默认出来的是a.out, 可以通过 -o 定制名称：gcc hello.c -o hello.out
