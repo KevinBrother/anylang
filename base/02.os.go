@@ -4,8 +4,18 @@ package main
 import (
 	"fmt"
 	"os"
-	"strings"
 )
+
+/**
+practise:
+1. 打印自己的名字
+2. 打印命令行参数的索引和值，每个一行
+*/
+func main() {
+	for index, arg := range os.Args[0:] {
+		fmt.Println(index, arg)
+	}
+}
 
 /* func main() {
 	var s string
@@ -28,8 +38,9 @@ func main() {
 	fmt.Println(s)
 }*/
 
-func main() {
+/*func main() {
 
 	fmt.Println(strings.Join(os.Args[0:], " "))
 	fmt.Println(os.Args[0:])
 }
+*/
