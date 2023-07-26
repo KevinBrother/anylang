@@ -19,3 +19,5 @@
 
 ## rand 库 是干嘛用的？
 [ ]
+
+## /base/05.http.go 不知道怎么换成 io.Copy, dst 怎么来？
