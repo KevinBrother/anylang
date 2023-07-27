@@ -9,6 +9,7 @@ import (
 	"math"
 	"math/rand"
 	"net/http"
+	"strconv"
 	"sync"
 )
 
@@ -49,8 +50,16 @@ const (
 )
 
 func lissajous2(w http.ResponseWriter, r *http.Request) {
+	params := resolveParams(w, r)
+
+	cyclesStr, ok := params["cycles"]
+	if !ok {
+		cyclesStr = "5"
+	}
+
+	cycles, _ := strconv.Atoi(cyclesStr)
 	const (
-		cycles  = 5     // number of complete x oscillator revolutions
+		// number of complete x oscillator revolutions
 		res     = 0.001 // angular resolution
 		size    = 100   // image canvas covers [-size..+size]
 		nframes = 64    // number of animation frames
@@ -63,7 +72,7 @@ func lissajous2(w http.ResponseWriter, r *http.Request) {
 	for i := 0; i < nframes; i++ {
 		rect := image.Rect(0, 0, 2*size+1, 2*size+1)
 		img := image.NewPaletted(rect, palette2)
-		for t := 0.0; t < cycles*2*math.Pi; t += res {
+		for t := 0.0; t < float64(cycles)*2*math.Pi; t += res {
 			x := math.Sin(t)
 			y := math.Sin(t*freq + phase)
 			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5), blackIndex2)
@@ -75,4 +84,17 @@ func lissajous2(w http.ResponseWriter, r *http.Request) {
 
 	gif.EncodeAll(w, &anim) // NOTE: ignoring encoding errors
 
+}
+
+func resolveParams(w http.ResponseWriter, r *http.Request) map[string]string {
+	if err := r.ParseForm(); err != nil {
+		log.Print(err)
+	}
+
+	params := make(map[string]string)
+
+	for k, v := range r.Form {
+		params[k] = v[0]
+	}
+	return params
 }
