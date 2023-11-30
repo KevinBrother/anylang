@@ -63,6 +63,10 @@
     "stdio.h": "c",
     "*.md": "c",
     "*.txt": "c",
-    "math.h": "c"
+    "math.h": "c",
+    "sum.h": "c",
+    "__availability": "c",
+    "deque": "c",
+    "filesystem": "c"
   }
 }
