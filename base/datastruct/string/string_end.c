@@ -9,5 +9,8 @@ int main(int argc, char const *argv[])
     printf("\n"); // 换行
     printf("字符串b：%s", b); // 输出字符串b
 
+    
+    puts("lmj");
+
     return 0;
 }
