@@ -58,3 +58,8 @@
 ``` bash
 gcc hello.c sum.c
 ```
+
+
+# Q&A
+
+1. (指针和字符串中问题)[./datastruct/string/char.c]
