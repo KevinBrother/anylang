@@ -7,6 +7,9 @@
 [ ] C
   分支名 Clang
 
+[ ] js
+  分支名 javascript
+
 [ ] GO
   分支名 golang
 
