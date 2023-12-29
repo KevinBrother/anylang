@@ -63,3 +63,18 @@ gcc hello.c sum.c
 # Q&A
 
 1. (指针和字符串中问题)[./datastruct/string/char.c]
+
+2. 结构体定义
+```c
+// 有问题
+struct Student {
+    int age;
+    struct Student stu;
+};
+
+// 没问题
+struct Student {
+    int age;
+    struct Student* next;
+};
+```
