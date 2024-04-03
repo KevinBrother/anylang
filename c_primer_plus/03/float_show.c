@@ -10,19 +10,9 @@
     }while(0)
 
 
-int main() {
-    double fa = 0.1;
-    double da = 0.2;
-
-    printf("fa: %lf , da: %lf \n", fa, da);
-    printf("sizeof(fa): %lu , sizeof(da): %lu \n",  sizeof(fa), sizeof(da));
-    printf("0.1 + 0.2 = %f \n", fa + da);
-    return 0;
-}
 
 
-
-int main2(int argc, char **argv) {
+int main(int argc, char **argv) {
     float f;
     double d;
     char *p;
@@ -77,3 +67,13 @@ int main2(int argc, char **argv) {
     return 0;
 }
 
+
+int main2() {
+    double fa = 0.1;
+    double da = 0.2;
+
+    printf("fa: %lf , da: %lf \n", fa, da);
+    printf("sizeof(fa): %lu , sizeof(da): %lu \n",  sizeof(fa), sizeof(da));
+    printf("0.1 + 0.2 = %f \n", fa + da);
+    return 0;
+}
