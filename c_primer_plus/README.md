@@ -119,6 +119,7 @@ sizeof操作符用于获取变量、类型或表达式所占用的字节大小�
             ./a.out > test.txt # 2
             ./a.out < echo.c > test.txt # 3
         ```
+3. 在 unix 系统中，Ctrl+D 可以模拟 EOF（End of File）信号，表示文件结束。在 DOS 系统中，Ctrl+Z 可以模拟 EOF 信号。
 
 ## question
 [x] gcc怎么只编译，不链接
