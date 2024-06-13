@@ -1,14 +1,13 @@
 show databases;
 
-
 Alter TABLE account MODIFY phone VARCHAR(11);
 DELETE FROM account limit 4;
-
-
+DROP TABLE IF EXISTS account;
 CREATE DATABASE petstore;
 
 use petstore;
 
+show tables ;
 
 CREATE TABLE account (
     userid VARCHAR(255),
@@ -17,7 +16,8 @@ CREATE TABLE account (
     sex ENUM ('男','女'),
     address VARCHAR(255),
     email VARCHAR(255),
-    phone VARCHAR(11)
+    phone VARCHAR(11),
+    PRIMARY KEY (userid)
 );
 
 INSERT INTO account (userid, fullname, password, sex, address, email, phone)
@@ -33,7 +33,8 @@ values
 CREATE TABLE category (
     catid int,
     catname VARCHAR(255),
-    cades VARCHAR(255)
+    cades VARCHAR(255),
+    PRIMARY KEY (catid)
 );
 
 INSERT INTO category (catid, catname, cades)
@@ -52,7 +53,8 @@ CREATE TABLE product (
     descn VARCHAR(255),
     listprice DECIMAL(10,2),
     unitcost DECIMAL(10,2),
-    qty INT
+    qty INT,
+    PRIMARY KEY (productid)
 );
 
 INSERT INTO product (productid, catid, name, descn, listprice, unitcost, qty)
@@ -82,6 +84,10 @@ CREATE TABLE orders (
  status bool
 );
 
+ALTER TABLE orders
+# DROP PRIMARY KEY,
+ADD PRIMARY KEY (orderid);
+
 INSERT INTO orders (orderid, userid, orderdate, totalprice, status)
 VALUES
 ('20130411', 'u0001', '2013-4-11 15:07:34', 500.00, 0),
@@ -92,7 +98,7 @@ VALUES
 
 
 CREATE TABLE lineitem (
-    orderid VARCHAR(255),
+    orderid VARCHAR(255) not null,
     itemid VARCHAR(255),
     quantity INT,
     unitprice DECIMAL(10,2)
@@ -107,3 +113,6 @@ VALUES
 ('20130413', 'K9-DL-01', 1, 130.00),
 ('20130414', 'RP-SN-01', 2, 125.00),
 ('20130415', 'AV-SB-02', 2, 50.00);
+
+
+select * from product;

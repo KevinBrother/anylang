@@ -16,7 +16,7 @@ create table xxx (
 
 - 修改表
 ```sql
-Alter TABLE account MODIFY phone VARCHAR(11);
+Alter TABLE xxx MODIFY phone VARCHAR(11);
 ```
 
 - 删除表
@@ -30,5 +30,12 @@ DROP TABLE  IF EXISTS xxx;
 - 常见的DML语句包括SELECT、INSERT、UPDATE和DELETE等。
 
 
+## 常见概念
+
+### 主键
+
+### 外键
+
 ## 文档
 [MySQL 8.4 Reference Manual](https://dev.mysql.com/doc/refman/8.4/en/create-table.html)
+[mysql-tutorial](https://github.com/guobinhit/mysql-tutorial/tree/master?tab=readme-ov-file)
