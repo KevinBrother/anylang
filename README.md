@@ -10,6 +10,8 @@
 [ ] js
   分支名 javascript
 
+[ ] sql
+
 [ ] GO
   分支名 golang
 
