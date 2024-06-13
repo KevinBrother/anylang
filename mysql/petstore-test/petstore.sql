@@ -1,13 +1,19 @@
 show databases;
-
-Alter TABLE account MODIFY phone VARCHAR(11);
-DELETE FROM account limit 4;
-DROP TABLE IF EXISTS account;
 CREATE DATABASE petstore;
-
 use petstore;
 
 show tables ;
+Alter TABLE account MODIFY phone VARCHAR(11);
+DELETE FROM account limit 4;
+select * from product;
+
+# ======================= init =======================
+
+DROP TABLE IF EXISTS account;
+DROP TABLE IF EXISTS category;
+DROP TABLE IF EXISTS product;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS lineitem;
 
 CREATE TABLE account (
     userid VARCHAR(255),
@@ -113,6 +119,3 @@ VALUES
 ('20130413', 'K9-DL-01', 1, 130.00),
 ('20130414', 'RP-SN-01', 2, 125.00),
 ('20130415', 'AV-SB-02', 2, 50.00);
-
-
-select * from product;
