@@ -3,3 +3,4 @@
 .vscode
 carInfo.txt
 *.o
+output/
