@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"go-project/myutils"
+	"log"
 )
 
 func main() {
@@ -12,4 +13,16 @@ func main() {
 	fmt.Println("before swap", a, b)
 	myutils.Change(&a, &b)
 	fmt.Println("after swap", a, b)
+
+	fmt.Println("======================")
+
+	text := "This is a sample text to be compressed."
+
+	compressedData, err := myutils.CompressText(text)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Original Text Length:", len(text))
+	fmt.Println("Compressed Data Length:", len(compressedData))
 }
