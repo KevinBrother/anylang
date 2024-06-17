@@ -29,6 +29,27 @@ DROP TABLE  IF EXISTS xxx;
 - DML语句用于处理数据库中的实际数据。
 - 常见的DML语句包括SELECT、INSERT、UPDATE和DELETE等。
 
+### 增
+```sql
+INSERT INTO table_name (phone, aget)
+VALUES
+    (123, 12),
+    (122, 12);
+```
+### 删
+```sql
+DELETE from table_name where phone = 123;
+```
+
+### 改
+```sql
+UPDATE table_name set phone = 222 where phone = 123;
+```
+
+### 查
+```sql
+SELECT * from table_name where phone = 123;
+```
 
 ## 常见概念
 
