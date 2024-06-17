@@ -7,12 +7,20 @@
 [ ] C
   分支名 Clang
 
+[ ] js
+  分支名 javascript
+
+[ ] sql
+
 [ ] GO
   分支名 golang
 
 [ ] rust
 
 [ ] java
+
+[ ] flutter
+  分支名 flutter
 
 ## 学习步骤
   1. 基础语法
