@@ -1,7 +1,9 @@
 # 三方依赖
 
+## [Go 语言中 GoPath 模式与 GoModules 模式介绍](https://www.cnblogs.com/wjaaron/p/14797003.html)
 
-## Go 1.16 开始 使用 go.mod 替代 GOPATH 管理项目
+
+## Go 1.14 开始 使用 go.mod 替代 GOPATH 管理项目
 ```bash
 go mod init xxxx
 ```
