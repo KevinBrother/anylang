@@ -119,3 +119,6 @@ VALUES
 ('20130413', 'K9-DL-01', 1, 130.00),
 ('20130414', 'RP-SN-01', 2, 125.00),
 ('20130415', 'AV-SB-02', 2, 50.00);
+
+UPDATE lineitem
+SET quantity = 4 where  itemid = 'RP-SN-01';
