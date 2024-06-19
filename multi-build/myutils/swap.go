@@ -3,6 +3,7 @@ package myutils
 import (
 	"bytes"
 	"compress/gzip"
+	_ "go-project/init-test"
 )
 
 func Change(a *int, b *int) {
