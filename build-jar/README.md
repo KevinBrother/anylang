@@ -25,6 +25,9 @@ javac *.java -d output
 # 打包 jar 包：jar -cvfm 文件名.jar META-INF/MANIFEST.MF *.class （包含清单文件）
 jar -cvfm MainDemo.jar META-INF/MANIFEST.MF  *.class
 
+# package-main 中需要额外指定com 文件夹中的，target
+jar -cvfm MainDemo.jar META-INF/MANIFEST.MF  *.class com
+
 # 运行 jar 包：java -jar 文件名.jar
 java -jar MainDemo.jar
 ```

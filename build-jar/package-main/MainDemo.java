@@ -1,4 +1,4 @@
-import com.other;
+import com.other.Swap;
 
 class MainDemo {
     public static void main(String[]args){
