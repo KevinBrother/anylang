@@ -4,25 +4,28 @@
 
 ## 列表
 
-[ ] C
+[x] C/C++
   分支名 Clang
 
 [ ] js
   分支名 javascript
 
-[ ] sql
+[x] sql
 
-[ ] GO
+[x] GO
   分支名 golang
 
 [ ] rust
 
-[ ] java
+[x] java
+
+[x] python
 
 [ ] flutter
   分支名 flutter
 
 ## 学习步骤
+
   1. 基础语法
   2. 小工具
   3. 项目实战，并部署到服务器中，可用！！！
