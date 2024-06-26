@@ -4,12 +4,30 @@
 
 ## 列表
 
-[ ] C
+[x] C/C++
   分支名 Clang
 
-[ ] GO
+[ ] js
+  分支名 javascript
+
+[x] sql
+
+[x] GO
   分支名 golang
 
 [ ] rust
 
-[ ] java
+[x] java
+
+[x] python
+
+[ ] flutter
+  分支名 flutter
+
+## 学习步骤
+
+  1. 基础语法
+  2. 小工具
+  3. 项目实战，并部署到服务器中，可用！！！
+
+tip： 如果学的语言，不能做出可以用的东西来，那他毫无价值！

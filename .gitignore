@@ -1,6 +1,11 @@
 *.exe
-*.out
-.vscode
 carInfo.txt
+.idea
+.vscode
+*.out
 *.o
-output/
+output
+venv
+dist
+__pycache__
+kssbox.egg-info
