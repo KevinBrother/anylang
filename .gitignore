@@ -1,7 +1,6 @@
 *.exe
 carInfo.txt
 .idea
-.vscode
 *.out
 *.o
 output
