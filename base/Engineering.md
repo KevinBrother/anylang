@@ -11,6 +11,7 @@ go build  -o hello.out 01.hello.go
 ```
 
 ## [多文件](../multi-build)
+
 1. 先创建 go.mod 文件
 
 ```bash
@@ -20,6 +21,7 @@ go mod init go-project
 ```
 
 2. 在main 中导入
+
 ```go
 import (
 "go-project/xxxx"
@@ -28,6 +30,7 @@ import (
 ```
 
 3. 运行
+
 ```bash
  go run main.go
 ```
