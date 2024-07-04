@@ -1,2 +1,9 @@
 .idea
 .vscode
+*.out
+*.o
+output
+venv
+dist
+__pycache__
+kssbox.egg-info
