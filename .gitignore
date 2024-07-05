@@ -4,3 +4,8 @@
 *.o
 output
 *.class
+venv
+dist
+__pycache__
+node_modules
+kssbox.egg-info
