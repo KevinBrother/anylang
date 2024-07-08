@@ -4,11 +4,16 @@ import (
 	"io"
 	"log"
 	"net"
+	"os"
 	"time"
 )
 
 func main() {
-	listener, err := net.Listen("tcp", "localhost:8000")
+	// 获取命令行参数
+	port := os.Args[1:][0]
+
+	listener, err := net.Listen("tcp", "localhost:"+port)
+	log.Println("Listening on localhost:" + port)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -25,7 +30,6 @@ func main() {
 
 func handleConn(c net.Conn) {
 	defer c.Close()
-	for {
 		_, err := io.WriteString(c, time.Now().Format("15:04:05\n"))
 		if err != nil {
 			return // e.g., client disconnected
