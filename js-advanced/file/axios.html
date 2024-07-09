@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>File Upload</h1>
+    <p>Click the button to select a file to upload.</p>
+    <div>
+      <input type="text" id="username" required />
+      <label for="myFile">Select a file:</label>
+      <input type="file" id="myFile" required />
+      <input type="submit" id="onUpload" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      document
+        .getElementById("onUpload")
+        .addEventListener("click", function () {
+          var fileName = document.getElementById("myFile").value;
+          var username = document.getElementById("username").value;
+
+            var data = new FormData();
+            data.append("username", username);
+            data.append("myFile", document.getElementById("myFile").files[0]);
+
+        //   var data = {
+        //     username: username,
+        //     myFile: document.getElementById("myFile").files[0],
+        //   };
+
+          console.log(data);
+
+          axios({
+            url: "http://localhost:13000/uploadFile",
+            method: "post",
+            data,
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          })
+            .then((response) => response.data)
+            .then((data) => {
+              document.getElementById("demo").innerHTML = data;
+            })
+            .catch((err) => console.log(err));
+        });
+    </script>
+  </body>
+</html>
