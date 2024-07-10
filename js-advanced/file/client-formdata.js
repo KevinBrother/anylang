@@ -2,7 +2,7 @@ const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
 
-const file = path.join(__dirname, "ico.svg");
+const file = path.join(__dirname, 'assets',"ico.svg");
 
 axios({
   method: "post",

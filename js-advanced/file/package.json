@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "client": "node client.js"
+    "client-formdata": "node client-formdata.js",
+    "client-post": "node client-post.js"
   },
   "keywords": [],
   "author": "",
