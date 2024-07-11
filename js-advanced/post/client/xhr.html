@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>File Upload</h1>
+    <p>Click the button to select a file to upload.</p>
+    <div>
+      <input type="text" id="username" />
+      <label for="myFile">Select a file:</label>
+      <input type="file" id="myFile" multiple />
+      <input type="submit" id="onUpload" />
+    </div>
+    <div id="callback"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      var data = new FormData();
+
+      document
+        .getElementById("onUpload")
+        .addEventListener("click", async function () {
+          var myFile = document.getElementById("myFile").files[0];
+          var username = document.getElementById("username").value;
+          var obj = { age: 1, name: "good" };
+
+          // data.append("username", username);
+          // data.append("obj", obj);
+          // data.append("myFile", myFile);
+
+          // var data = {
+          //   username,
+          //   myFile,
+          //   obj,
+          // };
+
+          var fileContent = await fileReader(myFile);
+
+          var data = {
+            boundary: "----WebKitFormBoundaryABC123",
+            entries: [
+              {
+                name: "username",
+                value: "john_doe",
+              },
+              {
+                name: "user",
+                value: obj,
+              },
+              {
+                name: "profile_picture",
+                value: fileContent,
+                filename: myFile.name,
+                contentType: myFile.type,
+              },
+            ],
+          };
+
+          console.log(data);
+
+          sendFormData(
+            "http://localhost:13000/uploadFile",
+            data,
+            function (error, response) {
+              if (error) {
+                console.error(error);
+              } else {
+                console.log(response);
+              }
+            }
+          );
+        });
+
+      function sendFormData(url, formData, callback) {
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              callback(null, xhr.responseText);
+            } else {
+              callback(new Error("Request failed with status " + xhr.status));
+            }
+          }
+        };
+
+        xhr.open("POST", url, true);
+
+        // 设置请求头
+        xhr.setRequestHeader(
+          "Content-Type",
+          "multipart/form-data; boundary=" + formData.boundary
+        );
+
+        // 构建请求体
+        var requestBody = "--" + formData.boundary + "\r\n";
+        formData.entries.forEach(function (entry) {
+          requestBody +=
+            'Content-Disposition: form-data; name="' + entry.name + '"';
+          if (entry.filename) {
+            requestBody += '; filename="' + entry.filename + '"';
+          }
+          requestBody += "\r\n";
+          requestBody += "Content-Type: " + entry.contentType + "\r\n";
+          requestBody += "\r\n";
+          requestBody += entry.value + "\r\n";
+          requestBody += "--" + formData.boundary + "\r\n";
+        });
+        requestBody += "--";
+
+        xhr.send(requestBody);
+      }
+
+      function fileReader(file) {
+        return new Promise((resolve, reject) => {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            resolve(e.target.result);
+          };
+          reader.onerror = function (e) {
+            reject(e);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>File Upload</h1>
     <p>Click the button to select a file to upload.</p>
-    <form action="http://localhost:13000/uploadFile" method="post" enctype="multipart/form-data">
-        <input type="text" name="username" required>
-        <label for="myFile">Select a file:</label>
-        <input type="file" name="myFile"  required>
-        <input type="submit" value="Upload">
+    <form
+      action="http://localhost:13000/uploadFile"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="text" name="username" />
+      <label for="myFile">Select a file:</label>
+      <input type="file" name="myFile" />
+      <input type="submit" value="Upload" />
     </form>
     <p id="demo"></p>
-    <script >
-        document.getElementById('myFile').onchange = function() {
-            var fileName = document.getElementById('myFile').value;
-            document.getElementById('demo').innerHTML = 'Selected file:'+ fileName;
-            console.log(fileName);
-        }
+    <script>
+      document.getElementById("myFile").onchange = function () {
+        var fileName = document.getElementById("myFile").value;
+        document.getElementById("demo").innerHTML = "Selected file:" + fileName;
+        console.log(fileName);
+      };
     </script>
-</body>
+  </body>
 </html>

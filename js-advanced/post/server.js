@@ -4,6 +4,9 @@ http
   .createServer((req, res) => {
     // 支持跨域
     res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    
     if (req.method === "POST") {
       let body = "";
       req.on("data", (chunk) => {

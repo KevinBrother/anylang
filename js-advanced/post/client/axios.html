@@ -9,27 +9,33 @@
     <h1>File Upload</h1>
     <p>Click the button to select a file to upload.</p>
     <div>
-      <input type="text" id="username" required />
+      <input type="text" id="username" />
       <label for="myFile">Select a file:</label>
-      <input type="file" id="myFile" required />
+      <input type="file" id="myFile" multiple />
       <input type="submit" id="onUpload" />
     </div>
+    <div id="callback"></div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
       document
         .getElementById("onUpload")
         .addEventListener("click", function () {
-          var fileName = document.getElementById("myFile").value;
+          var myFile = document.getElementById("myFile").files;
           var username = document.getElementById("username").value;
+          var obj = { age: 1, name: "good" };
 
-            var data = new FormData();
-            data.append("username", username);
-            data.append("myFile", document.getElementById("myFile").files[0]);
+          /*    
+          var data = new FormData();
+          data.append("username", username);
+          data.append("obj", obj);
+          data.append("myFile", myFile);
+          */
 
-        //   var data = {
-        //     username: username,
-        //     myFile: document.getElementById("myFile").files[0],
-        //   };
+          var data = {
+            username,
+            myFile,
+            obj,
+          };
 
           console.log(data);
 
@@ -43,7 +49,7 @@
           })
             .then((response) => response.data)
             .then((data) => {
-              document.getElementById("demo").innerHTML = data;
+              document.getElementById("callback").innerHTML = data;
             })
             .catch((err) => console.log(err));
         });
