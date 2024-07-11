@@ -1,6 +1,4 @@
 const http = require("http");
-const fs = require("fs");
-const querystring = require("querystring");
 
 http
   .createServer((req, res) => {
@@ -12,9 +10,9 @@ http
         body += chunk.toString();
       });
       req.on("end", () => {
-        const params = querystring.parse(body);
-        console.log("POST请求参数:", params);
-        res.end("post: 参数解析完成");
+        console.log(body)
+        res.setHeader("Content-Type", "text/html; charset=utf-8");
+        res.end("<h3>post: 参数解析完成</h3>");
       });
     } else {
       res.writeHead(200, { "Content-Type": "text/plain" });
