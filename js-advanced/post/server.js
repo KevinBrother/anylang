@@ -2,6 +2,7 @@ const http = require("http");
 
 http
   .createServer((req, res) => {
+    console.log("🚀 ~ .createServer ~ Content-Type:", req.headers["content-type"])
     // 支持跨域
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "POST, GET");
