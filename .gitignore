@@ -8,3 +8,4 @@ venv
 dist
 __pycache__
 kssbox.egg-info
+*.dSYM
