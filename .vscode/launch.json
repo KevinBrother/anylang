@@ -10,7 +10,7 @@
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}.out",
       "cwd": "${fileDirname}",
-      "preLaunchTask": "run C++ output",
+      "preLaunchTask": "run c compile",
       "linux": {
         "MIMode": "gdb",
         "miDebuggerPath": "/usr/bin/gdb"
