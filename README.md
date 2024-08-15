@@ -24,6 +24,9 @@
 [ ] flutter
   分支名 flutter
 
+[x] shell
+  包括：shell脚本、makefile 规则
+
 ## 学习步骤
 
   1. 基础语法
