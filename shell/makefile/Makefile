@@ -22,3 +22,12 @@ cd_ok:
 no_output:
 	@echo 'not display'
 	echo 'will display'	
+
+
+has_error:
+	rm zzz.txt
+	@echo 'ok'
+
+ignore_error:
+	-rm zzz.txt
+	@echo 'ok'
