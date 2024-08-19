@@ -7,7 +7,7 @@
 javac MainDemo.java
 
 # 运行 java 文件：java 文件名 (不用 .class 后缀）
-javac MainDemo
+java MainDemo
 ```
 
 ## 通过 java 和 classpath 直接运行
