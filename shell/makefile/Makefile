@@ -31,3 +31,6 @@ has_error:
 ignore_error:
 	-rm zzz.txt
 	@echo 'ok'
+
+ls:
+	@echo ls -l
