@@ -34,3 +34,8 @@ console.log(myTypeof(Symbol));
 console.log(myTypeof({}));
 console.log(myTypeof([]));
 console.log(myTypeof(function a() {}));
+
+let oString = Object.prototype.toString;
+console.log(oString.call(1));
+
+// 类型定义、toString 实现、call 的使用、slice 的使用
