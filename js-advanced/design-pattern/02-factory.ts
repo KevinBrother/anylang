@@ -1,41 +1,57 @@
 // 小明家有两个工厂，一个用于生产圆形积木，一个用于生产方形积木，
 // 请你帮他设计一个积木工厂系统，记录积木生产的信息。
 
-interface Block {
+interface IBlock {
   product(): void;
 }
 
-class Circle implements Block {
+interface IFactory {
+  createBlock(): IBlock;
+}
+
+class Circle implements IBlock {
   product(): void {
     console.log("Circle BLock");
   }
 }
 
-class Square implements Block {
+class Square implements IBlock {
   product(): void {
     console.log("Square BLock");
   }
 }
 
-class Factory {
-  woods: Block[] = [];
-  add(type: Block, quantity: number) {
-    for (let i = 0; i < quantity; i++) {
-      this.woods.push(new type());
-    }
-  }
-
-  output() {
-    this.woods.forEach((wood) => {
-      console.log(`${wood.name} Block`);
-    });
+class CircleFactory implements IFactory {
+  createBlock(): IBlock {
+    return new Circle();
   }
 }
 
-const blockFactory = new Factory();
+class SquareFactory implements IFactory {
+  createBlock(): IBlock {
+    return new Square();
+  }
+}
 
-blockFactory.add("Circle", 1);
-blockFactory.add("Square", 2);
-blockFactory.add("Circle", 1);
+function main(count: number) {
+  function dfs(...args: [string, number][]) {
+    if (args.length < count) {
+      return (arg) => dfs(...args, arg);
+    }
 
-blockFactory.output();
+    args.forEach((blockAndCount) => {
+      const factory = blockAndCount[0] === "Circle" ? new CircleFactory() : new SquareFactory();
+      
+      for(let i = 0; i < blockAndCount[1]; i++) {
+        factory.createBlock().product();
+      }
+    });
+  }
+
+  return dfs;
+}
+
+// @ts-ignore
+main(3)(['Circle', 1])(['Square', 2])(['Circle', 1]);
+
+export {};
