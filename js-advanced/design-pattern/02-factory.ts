@@ -40,9 +40,12 @@ function main(count: number) {
     }
 
     args.forEach((blockAndCount) => {
-      const factory = blockAndCount[0] === "Circle" ? new CircleFactory() : new SquareFactory();
-      
-      for(let i = 0; i < blockAndCount[1]; i++) {
+      const factory =
+        blockAndCount[0] === "Circle"
+          ? new CircleFactory()
+          : new SquareFactory();
+
+      for (let i = 0; i < blockAndCount[1]; i++) {
         factory.createBlock().product();
       }
     });
@@ -52,6 +55,6 @@ function main(count: number) {
 }
 
 // @ts-ignore
-main(3)(['Circle', 1])(['Square', 2])(['Circle', 1]);
+main(3)(["Circle", 1])(["Square", 2])(["Circle", 1]);
 
 export {};
