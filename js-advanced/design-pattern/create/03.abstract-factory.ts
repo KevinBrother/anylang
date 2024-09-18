@@ -78,3 +78,5 @@ function main(count: number) {
 
 // @ts-ignore
 main(3)("modern")("classical")("modern");
+
+export {}
