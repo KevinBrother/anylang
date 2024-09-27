@@ -30,11 +30,13 @@
 - 观察者模式（Observer）
 - 策略模式（Strategy）
 - 命令模式（Command）
-- 状态模式（State）
-- 责任链模式（Chain of Responsibility）
-- 迭代器模式（Iterator）
-- 访问者模式（Visitor）
 - 中介者模式（Mediator）
+- 备忘录模式 （Memento）
+- 模板方法模式（Template Method）
+- 迭代器模式（Iterator）
+- 责任链模式（Chain of Responsibility）
+- 解释器模式（Interpreter）
+- 访问者模式（Visitor）
 
 ## 区别
 
