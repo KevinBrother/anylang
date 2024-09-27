@@ -4,7 +4,7 @@ export function entry(count: number, fn: (...args: any) => void) {
       return (arg) => dfs(...args, arg);
     }
 
-    fn(...args);
+    return fn(...args);
   }
   return dfs;
 }
