@@ -4,8 +4,8 @@
 import { entry } from "../utils";
 
 interface ISubject {
-  add(observer: Student): void;
-  remove(observer: Student): void;
+  add(observer: IObserver): void;
+  remove(observer: IObserver): void;
   notify(msg: string): void;
 }
 
@@ -14,18 +14,18 @@ interface IObserver {
 }
 
 class Clock implements ISubject {
-  private observers: Map<string, Student>;
+  private observers: IObserver[]
 
   constructor() {
-    this.observers = new Map();
+    this.observers = [];
   }
 
-  add(observer: Student) {
-    this.observers.set(observer.name, observer);
+  add(observer: IObserver) {
+    this.observers.push(observer);
   }
 
-  remove(observer: Student) {
-    this.observers.delete(observer.name);
+  remove(observer: IObserver) {
+    this.observers = this.observers.filter((item) => item!== observer);
   }
 
   notify(msg: string) {
