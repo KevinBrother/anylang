@@ -10,17 +10,17 @@
 
 import { entry } from "../utils";
 
-interface DiscountStrategy {
-  applyDiscount(price: number): void;
+interface Strategy {
+  algorithm(price: number): void;
 }
 
-class NinePercentDiscount implements DiscountStrategy {
-  applyDiscount(price) {
+class NinePercentDiscount implements Strategy {
+  algorithm(price) {
     console.log(price * 0.9);
   }
 }
 
-class FullDiscount implements DiscountStrategy {
+class FullDiscount implements Strategy {
   private priceMap = {
     100: 5,
     150: 15,
@@ -28,13 +28,13 @@ class FullDiscount implements DiscountStrategy {
     300: 40,
   };
 
-  applyDiscount(price) {
+  algorithm(price) {
     console.log(price - this.priceMap[price]);
   }
 }
 
-class Shopping {
-  private discountStrategy: DiscountStrategy;
+class StrategyContext {
+  private discountStrategy: Strategy;
 
   constructor(way) {
     switch (way) {
@@ -50,13 +50,13 @@ class Shopping {
   }
 
   discount(price) {
-    this.discountStrategy.applyDiscount(price);
+    this.discountStrategy.algorithm(price);
   }
 }
 
 // @ts-ignore
 entry(4, (...args) => {
   args.forEach(([price, way]) => {
-    new Shopping(way).discount(price);
+    new StrategyContext(way).discount(price);
   });
 })([100, 1])([200, 2])([300, 1])([300, 2]);
