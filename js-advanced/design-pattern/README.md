@@ -35,6 +35,8 @@
   - 把不需要外部清楚的细节尽可能封装起来（需要区分if 写在里面还是外面的辨别点。就是外部是否需要请求该细节）
   - 往往需要结合 简单工厂模式 简化客户端操作
 - 命令模式（Command）
+  - 需求对 “行为请求者” 与 ”行为实现者“ 进行松耦合
+  - Invoker（服务员）、Receiver（烤肉师傅）、OrderCommand（烤羊肉）、xxxCommand（烤xxx肉）
 - 中介者模式（Mediator）
 - 备忘录模式 （Memento）
 - 模板方法模式（Template Method）
@@ -108,3 +110,112 @@ class Driver {
 }
 
 ```
+
+### 组合和聚合
+
+#### 组合：长实线加实心菱形
+
+``` java
+// 轮子类，依赖于 Car
+class Wheel {
+    private String position;
+
+    public Wheel(String position) {
+        this.position = position;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+}
+
+// 车类，组合多个轮子
+class Car {
+    private List<Wheel> wheels;
+
+    public Car() {
+        // 车类内部负责创建轮子对象
+        wheels = new ArrayList<>();
+        wheels.add(new Wheel("Front-Left"));
+        wheels.add(new Wheel("Front-Right"));
+        wheels.add(new Wheel("Rear-Left"));
+        wheels.add(new Wheel("Rear-Right"));
+    }
+
+    public void showWheels() {
+        for (Wheel wheel : wheels) {
+            System.out.println(wheel.getPosition());
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // 创建车对象
+        Car car = new Car();
+        car.showWheels();
+
+        // 当车对象被销毁时，轮子对象也随之销毁
+        car = null;
+        // 无法再访问车的轮子，因为它们被组合在一起，生命周期一同结束
+    }
+}
+```
+
+#### 聚合：长实线加空心菱形
+
+``` java
+// 学生类，生命周期独立于 Classroom
+class Student {
+    private String name;
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+// 班级类，聚合多个学生
+class Classroom {
+    private List<Student> students;
+
+    // 构造函数接受外部创建的学生对象
+    public Classroom(List<Student> students) {
+        this.students = students;
+    }
+
+    public void showStudents() {
+        for (Student student : students) {
+            System.out.println(student.getName());
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // 学生对象在外部创建
+        Student s1 = new Student("Alice");
+        Student s2 = new Student("Bob");
+
+        // 学生对象传入 Classroom
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(s1);
+        studentList.add(s2);
+
+        // 创建班级对象
+        Classroom classroom = new Classroom(studentList);
+        classroom.showStudents();
+
+        // Classroom 对象被销毁后，学生对象仍然存在
+        classroom = null;
+        System.out.println(s1.getName()); // 输出 "Alice"
+    }
+}
+```
+
+#### 组合和聚合的特点
+
+- 两个方式可以互相转换，如何需要部分依赖整体的生命周期，则使用组合。如果需要独立，则使用聚合
