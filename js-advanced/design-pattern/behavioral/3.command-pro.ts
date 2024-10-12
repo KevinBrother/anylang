@@ -1,29 +1,48 @@
-// 小明去奶茶店买奶茶，他可以通过在自助点餐机上来点不同的饮品，请你使用命令模式设计一个程序，模拟这个自助点餐系统的功能。
+// 烤肉案例
 
 import { entry } from "../utils";
+// 命令的抽象类
+abstract class Command {
+  protected receiver: Receiver; // 烤肉师傅
 
-interface Command {
-  execute(): void;
+  constructor(receiver: Receiver) {
+    this.receiver = receiver;
+  }
+
+  abstract execute(): void;
 }
 
 // 烤肉师傅
 class Receiver {
+  bakeMutton() {
+    console.log("烤羊肉串");
+  }
+
+  bakeChickenWing() {
+    console.log("烤鸡翅");
+  }
+
   action(name: string) {
     console.log(`${name} is ready!`);
   }
 }
 
 // 烤羊肉串命令
-class OrderCommand implements Command {
-  private receiver: Receiver;
-  private receiverName: string;
-  constructor(receiver: Receiver, receiverName: string) {
-    this.receiverName = receiverName;
-    this.receiver = receiver;
+class BakeMuttonCommand extends Command {
+  constructor(receiver: Receiver) {
+    super(receiver);
   }
-
   execute(): void {
-    this.receiver.action(this.receiverName);
+    this.receiver.bakeMutton();
+  }
+}
+// 烤鸡翅命令
+class BakeCheckingWingCommand extends Command {
+  constructor(receiver: Receiver) {
+    super(receiver);
+  }
+  execute(): void {
+    this.receiver.bakeChickenWing();
   }
 }
 
@@ -35,6 +54,10 @@ class Invoke {
     this.command = command;
   }
 
+  setOrder(command: Command) {
+    this.command = command;
+  }
+
   invokeCommand() {
     this.command.execute();
   }
@@ -42,9 +65,27 @@ class Invoke {
 
 // @ts-ignore
 entry(4, (...args) => {
+  // 开店前的准备, 提前准备好烤肉师傅和服务员
+  const boy = new Receiver();
+  // const bakeMutton1 = new BakeMuttonCommand(boy);
+  // const bakeMutton2 = new BakeMuttonCommand(boy);
+  // const bakeChickenWing = new BakeCheckingWingCommand(boy)
+  let girl: Invoke;
+  let command: Command;
+
   args.forEach((type) => {
-    const command = new OrderCommand(new Receiver(), type);
-    const invoke = new Invoke(command);
-    invoke.invokeCommand()
+    if (type === "bakeMutton") {
+      command = new BakeMuttonCommand(boy);
+    } else {
+      command = new BakeCheckingWingCommand(boy);
+    }
+
+    if (!girl) {
+      girl = new Invoke(command);
+      girl.invokeCommand();
+    } else {
+      girl.setOrder(command);
+      girl.invokeCommand();
+    }
   });
-})("MilkTea")("Coffee")("Cola")("MilkTea");
+})("bakeMutton")("Coffee")("Cola")("bakeMutton");
