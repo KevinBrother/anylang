@@ -37,7 +37,7 @@
 - 命令模式（Command）
   - 需求对 “行为请求者” 与 ”行为实现者“ 进行松耦合
   - Invoker（服务员）、Receiver（烤肉师傅）、OrderCommand（烤羊肉）、xxxCommand（烤xxx肉）
-- 中介者模式（Mediator）
+- 中介者模式（Mediator） :调停者模式。
 - 备忘录模式 （Memento）
 - 模板方法模式（Template Method）
 - 迭代器模式（Iterator）
