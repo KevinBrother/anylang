@@ -69,14 +69,3 @@ entry(3, (...args) => {
   "User3",
   "How_is_everyone?",
 ]);
-
-function entry(count: number, fn: (...args: any) => void) {
-  function dfs(...args) {
-    if (args.length < count) {
-      return (arg) => dfs(...args, arg);
-    }
-
-    return fn(...args);
-  }
-  return dfs;
-}
