@@ -2,28 +2,53 @@
 
 import { entry } from "../utils";
 
-interface Command {
-  execute(): void;
-}
+abstract class Command {
+  protected receiver: Receiver;
 
-// 烤肉师傅
-class Receiver {
-  action(name: string) {
-    console.log(`${name} is ready!`);
-  }
-}
-
-// 烤羊肉串命令
-class OrderCommand implements Command {
-  private receiver: Receiver;
-  private receiverName: string;
-  constructor(receiver: Receiver, receiverName: string) {
-    this.receiverName = receiverName;
+  constructor(receiver: Receiver) {
     this.receiver = receiver;
   }
 
+  abstract execute(): void;
+}
+
+class Receiver {
+  milkTea() {
+    console.log("MileTea is Ready!");
+  }
+  coffee() {
+    console.log("Coffee is Ready!");
+  }
+  cola() {
+    console.log("Cola is Ready!");
+  }
+}
+
+class MileTeaCommand extends Command {
+  constructor(receiver: Receiver) {
+    super(receiver);
+  }
+
   execute(): void {
-    this.receiver.action(this.receiverName);
+    this.receiver.milkTea();
+  }
+}
+class CoffeeCommand extends Command {
+  constructor(receiver: Receiver) {
+    super(receiver);
+  }
+
+  execute(): void {
+    this.receiver.coffee();
+  }
+}
+class ColaCommand extends Command {
+  constructor(receiver: Receiver) {
+    super(receiver);
+  }
+
+  execute(): void {
+    this.receiver.cola();
   }
 }
 
@@ -35,6 +60,10 @@ class Invoke {
     this.command = command;
   }
 
+  setOrder(command: Command) {
+    this.command = command;
+  }
+
   invokeCommand() {
     this.command.execute();
   }
@@ -42,9 +71,25 @@ class Invoke {
 
 // @ts-ignore
 entry(4, (...args) => {
+  const machine = new Receiver();
+  let waiter: Invoke;
+  let command: Command;
+
   args.forEach((type) => {
-    const command = new OrderCommand(new Receiver(), type);
-    const invoke = new Invoke(command);
-    invoke.invokeCommand()
+    if (type === "MilkTea") {
+      command = new MileTeaCommand(machine);
+    } else if (type === "Coffee") {
+      command = new CoffeeCommand(machine);
+    } else if (type === "Cola") {
+      command = new ColaCommand(machine);
+    }
+
+    if (!waiter) {
+      waiter = new Invoke(command);
+      waiter.invokeCommand();
+    } else {
+      waiter.setOrder(command);
+      waiter.invokeCommand();
+    }
   });
 })("MilkTea")("Coffee")("Cola")("MilkTea");
