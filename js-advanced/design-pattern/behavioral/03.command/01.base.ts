@@ -1,6 +1,6 @@
 // 小明去奶茶店买奶茶，他可以通过在自助点餐机上来点不同的饮品，请你使用命令模式设计一个程序，模拟这个自助点餐系统的功能。
 
-import { entry } from "../utils";
+import { entry } from "../../utils";
 
 abstract class Command {
   protected receiver: Receiver;

@@ -1,6 +1,6 @@
 // 烤肉案例
 
-import { entry } from "../utils";
+import { entry } from "../../utils";
 // 命令的抽象类
 abstract class Command {
   protected receiver: Receiver; // 烤肉师傅
