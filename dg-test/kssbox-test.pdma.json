@@ -4,7 +4,7 @@
   "avatar": "",
   "version": "4.9.2",
   "createdTime": "2024-10-14 18:25:46",
-  "updatedTime": "2024-10-14 18:30:49",
+  "updatedTime": "2024-10-17 09:44:01",
   "dbConns": [],
   "profile": {
     "default": {
@@ -1423,6 +1423,534 @@
       "correlations": [],
       "indexes": [],
       "type": "P"
+    },
+    {
+      "id": "36A44DC5-5845-4F62-BCA2-01DE689545AB",
+      "env": {
+        "base": {
+          "nameSpace": "",
+          "codeRoot": ""
+        }
+      },
+      "defKey": "expenses",
+      "defName": "",
+      "comment": "",
+      "properties": {
+        "partitioned by": "(date string)",
+        "row format delimited": "",
+        "fields terminated by ','": "",
+        "collection items terminated by '-'": "",
+        "map keys terminated by ':'": "",
+        "store as textfile;": ""
+      },
+      "sysProps": {
+        "nameTemplate": "{defKey}[{defName}]"
+      },
+      "notes": {},
+      "headers": [
+        {
+          "refKey": "hideInGraph",
+          "hideInGraph": true
+        },
+        {
+          "refKey": "defKey",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "defName",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "primaryKey",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "notNull",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "autoIncrement",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "domain",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "type",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "len",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "scale",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "comment",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "refDict",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "defaultValue",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "isStandard",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "uiHint",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "extProps",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr1",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr2",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr3",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr4",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr5",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr6",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr7",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr8",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr9",
+          "freeze": false,
+          "hideInGraph": true
+        }
+      ],
+      "fields": [
+        {
+          "defKey": "CREATED_BY",
+          "defName": "创建人",
+          "comment": "",
+          "domain": "16120F75-6AA7-4483-868D-F07F511BB081",
+          "type": "",
+          "len": 32,
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": true,
+          "refDict": "",
+          "uiHint": "",
+          "id": "9E3D076C-25D3-4A64-97E9-2B5F5409B4C9",
+          "baseType": "FC9790A7-36B8-4A48-8F9A-BC1042BCFE64"
+        },
+        {
+          "defKey": "CREATED_TIME",
+          "defName": "创建时间",
+          "comment": "",
+          "domain": "7CFFA0D3-6A93-4DDC-BC10-DF21211064DC",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": true,
+          "refDict": "",
+          "uiHint": "",
+          "id": "55E28B05-09C3-4B79-AE1B-D5F6E129D74F",
+          "baseType": "89D69E81-EA34-42EE-9FA2-93B8BD27E098"
+        },
+        {
+          "defKey": "UPDATED_BY",
+          "defName": "更新人",
+          "comment": "",
+          "domain": "16120F75-6AA7-4483-868D-F07F511BB081",
+          "type": "",
+          "len": 32,
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": true,
+          "refDict": "",
+          "uiHint": "",
+          "id": "1EBBF070-1440-4E1C-8FAA-4E35FBF1CC65",
+          "baseType": "FC9790A7-36B8-4A48-8F9A-BC1042BCFE64"
+        },
+        {
+          "defKey": "UPDATED_TIME",
+          "defName": "更新时间",
+          "comment": "",
+          "domain": "7CFFA0D3-6A93-4DDC-BC10-DF21211064DC",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": true,
+          "refDict": "",
+          "uiHint": "",
+          "id": "1776010E-057D-4179-9946-0D0FB0026354",
+          "baseType": "89D69E81-EA34-42EE-9FA2-93B8BD27E098"
+        },
+        {
+          "defKey": "PRICE",
+          "defName": "金额数",
+          "comment": "",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": false,
+          "refDict": "",
+          "baseType": "1A0BDC09-0792-4174-9E8E-80BE8DF44B8E",
+          "extProps": {},
+          "domain": "C3B1681B-99F9-4818-9E80-DE1652A51D85",
+          "id": "CC83DABB-14D6-4BFE-A1D6-42953DE26B3B"
+        },
+        {
+          "defKey": "ID",
+          "defName": "ID",
+          "comment": "",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": true,
+          "notNull": true,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": false,
+          "refDict": "",
+          "baseType": "FC9790A7-36B8-4A48-8F9A-BC1042BCFE64",
+          "extProps": {},
+          "domain": "16120F75-6AA7-4483-868D-F07F511BB081",
+          "id": "25982B72-59A5-4E0B-BE76-B5AB9078AC25"
+        }
+      ],
+      "correlations": [],
+      "indexes": [],
+      "type": "P"
+    },
+    {
+      "id": "030658A6-1213-4B16-A9AB-0EEDB0D0D680",
+      "env": {
+        "base": {
+          "nameSpace": "",
+          "codeRoot": ""
+        }
+      },
+      "defKey": "incomes",
+      "defName": "",
+      "comment": "",
+      "properties": {
+        "partitioned by": "(date string)",
+        "row format delimited": "",
+        "fields terminated by ','": "",
+        "collection items terminated by '-'": "",
+        "map keys terminated by ':'": "",
+        "store as textfile;": ""
+      },
+      "sysProps": {
+        "nameTemplate": "{defKey}[{defName}]"
+      },
+      "notes": {},
+      "headers": [
+        {
+          "refKey": "hideInGraph",
+          "hideInGraph": true
+        },
+        {
+          "refKey": "defKey",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "defName",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "primaryKey",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "notNull",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "autoIncrement",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "domain",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "type",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "len",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "scale",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "comment",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "refDict",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "defaultValue",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "isStandard",
+          "freeze": false,
+          "hideInGraph": false
+        },
+        {
+          "refKey": "uiHint",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "extProps",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr1",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr2",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr3",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr4",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr5",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr6",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr7",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr8",
+          "freeze": false,
+          "hideInGraph": true
+        },
+        {
+          "refKey": "attr9",
+          "freeze": false,
+          "hideInGraph": true
+        }
+      ],
+      "fields": [
+        {
+          "defKey": "CREATED_BY",
+          "defName": "创建人",
+          "comment": "",
+          "domain": "16120F75-6AA7-4483-868D-F07F511BB081",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": true,
+          "refDict": null,
+          "uiHint": null,
+          "id": "6CC26247-68DD-471D-85A0-168E8E5C2D08",
+          "baseType": "FC9790A7-36B8-4A48-8F9A-BC1042BCFE64"
+        },
+        {
+          "defKey": "CREATED_TIME",
+          "defName": "创建时间",
+          "comment": "",
+          "domain": "7CFFA0D3-6A93-4DDC-BC10-DF21211064DC",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": true,
+          "refDict": null,
+          "uiHint": null,
+          "id": "653552CE-CDE8-42F4-86D3-F8D243426289",
+          "baseType": "89D69E81-EA34-42EE-9FA2-93B8BD27E098"
+        },
+        {
+          "defKey": "UPDATED_BY",
+          "defName": "更新人",
+          "comment": "",
+          "domain": "16120F75-6AA7-4483-868D-F07F511BB081",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": true,
+          "refDict": null,
+          "uiHint": null,
+          "id": "6A068B74-EC2B-4CD7-9F84-E44618D71509",
+          "baseType": "FC9790A7-36B8-4A48-8F9A-BC1042BCFE64"
+        },
+        {
+          "defKey": "UPDATED_TIME",
+          "defName": "更新时间",
+          "comment": "",
+          "domain": "7CFFA0D3-6A93-4DDC-BC10-DF21211064DC",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": true,
+          "refDict": null,
+          "uiHint": null,
+          "id": "902E6B64-E031-4CDA-A495-A13385AB97AB",
+          "baseType": "89D69E81-EA34-42EE-9FA2-93B8BD27E098"
+        },
+        {
+          "defKey": "PRICE",
+          "defName": "金额数",
+          "comment": "",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": false,
+          "notNull": false,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": false,
+          "refDict": null,
+          "baseType": "1A0BDC09-0792-4174-9E8E-80BE8DF44B8E",
+          "extProps": {},
+          "domain": "C3B1681B-99F9-4818-9E80-DE1652A51D85",
+          "id": "E221168E-774C-427E-8603-AC0A7702451E",
+          "uiHint": null
+        },
+        {
+          "defKey": "ID",
+          "defName": "ID",
+          "comment": "",
+          "type": "",
+          "len": "",
+          "scale": "",
+          "primaryKey": true,
+          "notNull": true,
+          "autoIncrement": false,
+          "defaultValue": "",
+          "hideInGraph": false,
+          "refDict": null,
+          "baseType": "FC9790A7-36B8-4A48-8F9A-BC1042BCFE64",
+          "extProps": {},
+          "domain": "16120F75-6AA7-4483-868D-F07F511BB081",
+          "id": "BD83D322-C7CD-4B0B-A2F3-5973C78E0C45",
+          "uiHint": null
+        }
+      ],
+      "correlations": [],
+      "indexes": [],
+      "type": "P"
     }
   ],
   "views": [],
@@ -1440,6 +1968,18 @@
       "refDiagrams": [],
       "refDicts": [],
       "id": "002526AA-35FE-4B7C-BB07-0D379239E6E6"
+    },
+    {
+      "defKey": "记账软件",
+      "defName": "记账软件",
+      "refEntities": [
+        "36A44DC5-5845-4F62-BCA2-01DE689545AB",
+        "030658A6-1213-4B16-A9AB-0EEDB0D0D680"
+      ],
+      "refViews": [],
+      "refDiagrams": [],
+      "refDicts": [],
+      "id": "C3088264-22A7-441E-88CB-AE8820CA3E12"
     }
   ],
   "dataTypeMapping": {
