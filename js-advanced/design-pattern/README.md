@@ -41,6 +41,7 @@
 - 备忘录模式 （Memento）
 - 模板方法模式（Template Method）
 - 迭代器模式（Iterator）
+- 状态模式 (State)
 - 责任链模式（Chain of Responsibility）
 - 解释器模式（Interpreter）
 - 访问者模式（Visitor）
