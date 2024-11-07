@@ -4,24 +4,38 @@
 // 根据余额的不同，以上3种状态可发生相互转换
 
 interface IState {
-  take();
-  put();
+  // 取款
+  withdraw(bank: Bank, amount: number);
+  // 存款
+  deposit(bank: Bank, amount: number);
 }
 
 class NormalState implements IState {
-  take() {}
+  withdraw(bank: Bank, amount: number) {
+    bank.amount -= amount;
+  }
 
-  put() {}
+  deposit(bank: Bank, amount: number) {
+    bank.amount += amount;
+  }
 }
 class OverdraftState implements IState {
-  take() {}
+  withdraw(bank: Bank, amount: number) {
+    bank.amount -= amount;
+  }
 
-  put() {}
+  deposit(bank: Bank, amount: number) {
+    bank.amount += amount;
+  }
 }
 class RestrictedState implements IState {
-  take() {}
+  withdraw(bank: Bank, amount: number) {
+    bank.amount -= amount;
+  }
 
-  put() {}
+  deposit(bank: Bank, amount: number) {
+    bank.amount += amount;
+  }
 }
 
 class Bank {
@@ -32,12 +46,12 @@ class Bank {
     this.state = state;
   }
 
-  take() {
-    this.state.take();
+  take(amount: number) {
+    this.state.withdraw(this, amount);
   }
 
-  put() {
-    this.state.put();
+  put(amount: number) {
+    this.state.deposit(this, amount);
   }
 }
 
