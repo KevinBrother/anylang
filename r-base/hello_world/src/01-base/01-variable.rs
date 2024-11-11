@@ -47,7 +47,7 @@ fn assignments() {
 }
 
 /**
- * 变量遮蔽
+ * 4. 变量遮蔽
  */
 fn shadowing() {
     let a = 1;
