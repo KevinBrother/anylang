@@ -1,5 +1,12 @@
 # Rust base
 
+## Document
+
+- [Rust 语言圣经](https://course.rs/about-book.html)
+- [对应的英文链接](https://doc.rust-lang.org/book/title-page.html)
+- [对应的在线练习](https://practice.course.rs/why-exercise.html)
+- [锈书：实战网址](https://rusty.course.rs/)
+
 ## 安装 Rust 前先安装 rustup
 
 - rustup 是 Rust 的安装程序，也是它的版本管理程序
@@ -30,4 +37,3 @@
 ## Cargo 更改源
 
 [ ] <https://course.rs/first-try/slowly-downloading.html>
-
