@@ -1,0 +1,23 @@
+{
+  "name": "anylang",
+  "version": "1.0.0",
+  "description": "tsconfig.json",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinBrother/anylang.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinBrother/anylang/issues"
+  },
+  "homepage": "https://github.com/KevinBrother/anylang#readme",
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.1"
+  }
+}
