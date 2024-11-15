@@ -10,6 +10,9 @@
 [x] js
   分支名 javascript
 
+[x] typescript
+  分支名 typescript
+
 [x] sql
 
 [x] GO
