@@ -17,7 +17,7 @@ tsc 的生效逻辑是：
         ```json
         {
              <!-- 默认当前目录下的所有 ts 文件， 可以通过 include 指定 -->
-            "include": ["src/**/*.ts", "index.d.ts"],
+            "include": ["src/**/*.ts"],
             "compilerOptions": {
                 "outDir": "./dist",
                 "target": "es2016",
