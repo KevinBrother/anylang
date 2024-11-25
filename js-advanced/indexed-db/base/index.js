@@ -1,46 +1,46 @@
 // 创建/打开数据库
 function handlerUpgraded(event) {
-    var userTable = createObjectStore(event.target, "user-table");
+    const userTable = createObjectStore(event.target, "user-table");
     console.log("userTable", userTable);
-    var nameIndex = createIndex(userTable, "name", "name", {
+    const nameIndex = createIndex(userTable, "name", "name", {
         unique: true,
     });
     console.log("nameIndex", nameIndex);
     createIndex(userTable, "age", "age");
     queryRecord(userTable, 1)
-        .then(function (result) {
+        .then((result) => {
         console.log("记录查询成功", result);
     })
-        .catch(function (error) {
+        .catch((error) => {
         console.log("记录查询失败", error);
     });
 }
-var openRequest = indexedDB.open("indexed-db-test", 3);
-openRequest.onerror = function (event) {
+const openRequest = indexedDB.open("indexed-db-test", 3);
+openRequest.onerror = (event) => {
     console.log("数据库打开失败", event.target.error);
 };
-openRequest.onsuccess = function (event) {
+openRequest.onsuccess = (event) => {
     console.log("数据库打开成功", event.target.result);
-    var userTable = openRequest.result
+    const userTable = openRequest.result
         .transaction("user-table", "readwrite")
         .objectStore("user-table");
     console.log("userTable", userTable);
     queryRecord(userTable, 1)
-        .then(function (result) {
+        .then((result) => {
         console.log("记录查询成功", result);
     })
-        .catch(function (error) {
+        .catch((error) => {
         console.log("记录查询失败", error);
     });
     readAllRecord(userTable)
-        .then(function (result) {
+        .then((result) => {
         console.log("记录查询成功", result);
     })
-        .catch(function (error) {
+        .catch((error) => {
         console.log("记录查询失败", error);
     });
 };
-openRequest.onupgradeneeded = function (event) {
+openRequest.onupgradeneeded = (event) => {
     console.log("数据库升级", event.target.result);
     handlerUpgraded(event);
 };
@@ -64,13 +64,13 @@ function createIndex(objectStore, indexName, keyPath, options) {
 }
 // 增删改查
 function addRecord(objectStore, record) {
-    return new Promise(function (resolve, reject) {
-        var request = objectStore.add(record);
-        request.onsuccess = function (event) {
+    return new Promise((resolve, reject) => {
+        const request = objectStore.add(record);
+        request.onsuccess = (event) => {
             //   console.log("记录添加成功", (event.target as IDBRequest).result);
             resolve(event.target.result);
         };
-        request.onerror = function (event) {
+        request.onerror = (event) => {
             //   console.log("记录添加失败", (event.target as IDBRequest).error);
             reject(event.target.error);
         };
@@ -78,24 +78,25 @@ function addRecord(objectStore, record) {
 }
 // 查询
 function queryRecord(objectStore, key) {
-    return new Promise(function (resolve, reject) {
-        var request = objectStore.get(key);
-        request.onsuccess = function (event) {
+    return new Promise((resolve, reject) => {
+        const request = objectStore.get(key);
+        request.onsuccess = (event) => {
             resolve(event.target.result);
         };
-        request.onerror = function (event) {
+        request.onerror = (event) => {
             reject(event.target.error);
         };
     });
 }
 function readAllRecord(objectStore) {
-    return new Promise(function (resolve, reject) {
-        var request = objectStore.getAll();
-        request.onsuccess = function (event) {
+    return new Promise((resolve, reject) => {
+        const request = objectStore.getAll();
+        request.onsuccess = (event) => {
             resolve(event.target.result);
         };
-        request.onerror = function (event) {
+        request.onerror = (event) => {
             reject(event.target.error);
         };
     });
 }
+export {};
