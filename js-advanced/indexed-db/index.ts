@@ -5,7 +5,6 @@ import {
   getMany,
   set,
   get,
-  setMany,
   update,
 } from "idb-keyval";
 // store 和 table 是同一个概念
