@@ -7,15 +7,18 @@
 [x] C/C++
   分支名 Clang
 
-[ ] js
+[x] js
   分支名 javascript
+
+[x] typescript
+  分支名 typescript
 
 [x] sql
 
 [x] GO
   分支名 golang
 
-[ ] rust
+[x] rust
 
 [x] java
 
