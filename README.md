@@ -4,25 +4,34 @@
 
 ## 列表
 
-[ ] C
+[x] C/C++
   分支名 Clang
 
-[ ] js
+[x] js
   分支名 javascript
 
-[ ] sql
+[x] typescript
+  分支名 typescript
 
-[ ] GO
+[x] sql
+
+[x] GO
   分支名 golang
 
-[ ] rust
+[x] rust
 
-[ ] java
+[x] java
+
+[x] python
 
 [ ] flutter
   分支名 flutter
 
+[x] shell
+  包括：shell脚本、makefile 规则
+
 ## 学习步骤
+
   1. 基础语法
   2. 小工具
   3. 项目实战，并部署到服务器中，可用！！！
