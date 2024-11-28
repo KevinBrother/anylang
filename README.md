@@ -13,6 +13,8 @@
 [x] typescript
   分支名 typescript
 
+[x] css
+
 [x] sql
 
 [x] GO
