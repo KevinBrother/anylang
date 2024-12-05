@@ -17,15 +17,17 @@
     margin: 15vh auto 0;
     border-radius: 10px;
     min-height: 200px;
-    gap: 20px;
   }
 
   .modal-header,
   .modal-footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
+
   .modal-header {
+    height: 30px;
     .close {
       cursor: pointer;
       margin: 0;
