@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="grow" onclick="grow()">Grow</button>
+    <script>
+        function LargeObj() {
+        this.largeArr = new Array(1000000).fill(1);
+        }
+
+        var x = []
+
+        function grow() {
+            const largeObj = new LargeObj();
+            x.push(largeObj);
+        }
+
+        setInterval(() => {
+            console.log( x[x.length -1] = null);
+        }, 2000);
+    </script>
+</body>
+</html>
