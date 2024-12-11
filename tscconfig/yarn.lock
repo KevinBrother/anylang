@@ -4,5 +4,10 @@
 
 "@electron-toolkit/preload@^3.0.1":
   version "3.0.1"
-  resolved "https://registry.npmmirror.com/@electron-toolkit/preload/-/preload-3.0.1.tgz#8bae193fd851f3d38c56eec13a5dd602744e8064"
+  resolved "https://registry.npmmirror.com/@electron-toolkit/preload/-/preload-3.0.1.tgz"
   integrity sha512-EzoQmpK8jqqU8YnM5jRe0GJjGVJPke2KtANqz8QtN2JPT96ViOvProBdK5C6riCm0j1T8jjAGVQCZLQy9OVoIA==
+
+"@types/node@17.0.16":
+  version "17.0.16"
+  resolved "https://registry.npmmirror.com/@types/node/-/node-17.0.16.tgz#e3733f46797b9df9e853ca9f719c8a6f7b84cd26"
+  integrity sha512-ydLaGVfQOQ6hI1xK2A5nVh8bl0OGoIfYMxPWHqqYe9bTkWCfqiVvZoh2I/QF2sNSkZzZyROBoTefIEI+PB6iIA==

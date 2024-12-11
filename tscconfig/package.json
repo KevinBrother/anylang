@@ -19,5 +19,8 @@
   "homepage": "https://github.com/KevinBrother/anylang#readme",
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.16"
   }
 }

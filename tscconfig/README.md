@@ -25,3 +25,30 @@ tsc 的生效逻辑是：
             }
         }
         ```
+
+## debug
+
+### 使用 ts-node + vscode
+
+- 不要使用 ems 调试 ts + node 的程序，
+- tsconfig.json 中配置 `"module": "CommonJS"`, `"esModuleInterop": true`, 在ts中让 esm 更可以更方便导入 cjs 的模块（default 模块， 不然需要 `import * as xx from 'xx'`）
+
+```json
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "esModuleInterop": true
+    }
+}
+``` json
+{
+    "type": "node",
+    "request": "launch",
+    "name": "debug/index.ts",
+    "runtimeExecutable": "ts-node", // 必须
+    // "runtimeArgs": ["--transpile-only"], 
+    // "skipFiles": ["<node_internals>/**", "node_modules/**"],
+    // "cwd": "${workspaceFolder}/tscconfig",
+    "program": "${workspaceFolder}/tscconfig/src/debug/index.ts"
+}
+```
