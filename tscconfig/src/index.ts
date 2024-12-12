@@ -1,6 +1,6 @@
 import constants from "@common/constants";
 import { electronAPI } from "@electron-toolkit/preload";
-
+import "./debug";
 
 console.log(constants.CLOSE_INNER_WINDOW);
 
