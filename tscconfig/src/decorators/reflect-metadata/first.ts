@@ -4,6 +4,8 @@ import "reflect-metadata";
 // Reflect.getMetadata(key, target)：用于从目标对象（类、方法、属性或参数）中 获取元数据。
 // Reflect.metadata 使用 WeakMap 来存储元数据，确保不会影响垃圾回收（GC）和内存管理。
 
+console.log("first");
+
 @Reflect.metadata("inClass", "A")
 class Test {
   @Reflect.metadata("inMethod", "B")
@@ -39,3 +41,6 @@ function metadata(metadataKey: string, metadataValue: any) {
 
 console.log(Reflect.getMetadata("inClass", Test)); // 'A'
 console.log(Reflect.getMetadata("inMethod", new Test(), "hello")); // 'B'
+
+const test = new Test();
+test.hello();
