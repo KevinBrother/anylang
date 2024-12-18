@@ -21,6 +21,7 @@
     "@electron-toolkit/preload": "^3.0.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.16"
+    "@types/node": "17.0.16",
+    "reflect-metadata": "^0.2.2"
   }
 }
