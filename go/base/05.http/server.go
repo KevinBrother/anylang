@@ -20,6 +20,12 @@ func main() {
 			fmt.Fprintf(w, "Hello, World! %q", r.URL.Path)
 		})
 
+		// 获取 get请求的参数
+		http.HandleFunc("/getParams", func(w http.ResponseWriter, r *http.Request) {
+			name := r.URL.Query().Get("name")
+			fmt.Fprintf(w, "name: ", name)
+		})
+
 		http.HandleFunc("/stop", func(w http.ResponseWriter, r *http.Request) {
 			os.Exit(0)
 		})
