@@ -9,3 +9,7 @@ __pycache__
 kssbox.egg-info
 node_modules
 *.class
+debug
+release
+.rustc_info.json
+CACHEDIR.TAG
