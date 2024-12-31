@@ -1,0 +1,11 @@
+.container {
+  /* start | end | center | stretch */
+  /* stretch： 拉伸， 占满单元格的整个宽度（默认值） */
+  /* 水平居中 */
+  justify-items: end; 
+  /* 垂直居中 */
+  align-items: stretch; 
+
+  /* place-items 是 justify-items 和 align-items 的合并简写形式 */
+  place-items: center stretch;
+}

@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  /* fraction 的缩写，意为"片段" */
+  /* grid-template-columns: 30% 30% 40%; */
+  /* grid-template-columns: 100px 1fr 2fr; */
+  /* grid-template-columns: 1fr 1fr minmax(300px, 1fr); */
+  /* grid-template-columns: 100px auto 100px; */
+  /* grid-template-columns: repeat(auto-fill, 50px); */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-columns: repeat(3, 100px); */
+  grid-template-columns: [c1] 100px [c2] auto [c3] 100px [c4 m-n]; /* 指定网格线名称 , 同一根线可以有多个名称*/
+  grid-template-rows: repeat(3, 100px);
+
+}
+
+.item {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid skyblue;
+  text-align: center;
+}

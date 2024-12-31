@@ -1,0 +1,12 @@
+.container {
+  /* start | end | center | stretch | space-around | space-between | space-evenly; */
+  /* 水平居中 */
+  /* justify-items: end; */
+  /* flex 布局中 常用的 justify-content 布局方式 */
+  /* justify-content: space-between; */
+  /* 垂直居中 */
+  /* align-content: space-between; */
+
+  /* place-content 是 justify-content 和 align-content 的合并简写形式 */
+  place-content: space-around space-evenly;
+}

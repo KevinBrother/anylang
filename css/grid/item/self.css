@@ -1,0 +1,10 @@
+.item-1 {
+  /* 
+    start | end | center | stretch;
+    默认值 stretch  拉伸，占满单元格的整个宽度
+    */
+  /* xx-self 只作用于单个项目 */
+  /* justify-self: center;
+  align-self: center; */
+  place-self: center;
+}

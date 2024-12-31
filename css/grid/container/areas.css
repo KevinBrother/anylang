@@ -1,0 +1,14 @@
+.container {
+    /* 指定网格区域名称 */
+    /* 区域名称会影响到 网格线，起始网格线自动命名为 区域名称-start，终止网格线自动命名为 区域名称-end */
+  /* grid-template-areas:
+    "header header header"
+    "sidebar content content"
+    "footer footer footer"; */
+
+  /* 使用点号表示空区域，没有用到该区域 */
+  grid-template-areas:
+    "header . header"
+    "sidebar . content"
+    "footer . footer";
+}

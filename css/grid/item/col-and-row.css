@@ -1,0 +1,13 @@
+.container {
+  grid-template-columns: [c1] 200px [c2] 200px [c3] 200px;
+  .item-1 {
+    /* 根据网格线，指定项目的位置 */
+    /* grid-column: 1 / 3; */
+    /* grid-row: 1 / 3; */
+    grid-column: c1 / c3;
+
+    /* span 跨越"，即左右边框（上下边框）之间跨越多少个网格。 */
+    /* grid-column-start: span 2; */
+    /* grid-column-end: span 2; */
+  }
+}

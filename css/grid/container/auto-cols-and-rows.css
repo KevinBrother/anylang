@@ -1,0 +1,4 @@
+.container {
+  grid-auto-rows: 50px;
+  grid-auto-columns: 50px;
+}

@@ -1,0 +1,19 @@
+.container {
+  /* grid-auto-flow: row; */
+  /* 默认值，按行排列 */
+  /* grid-auto-flow: column; */
+  /* 按列排列 */
+  /* grid-auto-flow: dense; */
+  /* 密集排列，会覆盖前面的排列 */
+  grid-auto-flow: row dense;
+  /* 按行排列，密集排列 */
+  /* grid-auto-flow: column dense; */
+  /* 按列排列，密集排列 */
+  /* grid-auto-flow: column; */
+
+  .item-1,
+  .item-2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}

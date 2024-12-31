@@ -1,0 +1,14 @@
+.container {
+  /* grid-template-areas:
+    "a b c"
+    "d e f"
+    "h h i";
+  .item-1 {
+    grid-area: e;
+  } */
+
+  .item-1 {
+    /* <row-start> / <column-start> / <row-end> / <column-end> */
+    grid-area: 2 / 2 / 3 / 3;
+  }
+}

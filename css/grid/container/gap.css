@@ -1,0 +1,10 @@
+.container {
+  /* grid-row-gap: 20px; */
+  /* 早期命名为 grid-row-gap */
+  /* row-gap: 20px;  */
+  /* grid-column-gap: 10px; */
+  /* 早期命名为 grid-column-gap */
+  /* column-gap: 10px; */
+  /* 早期命名为 grid-gap: 20px 10px; */
+  gap: 20px 10px; /* 等价于 row-gap 和 column-gap */
+}

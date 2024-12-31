@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  /* dense 先行后列，且尽可能紧密填满，尽量不出现空格 */
+  grid-auto-flow: row;
+  /* gap: 10px; */
+
+  > div {
+    background-color: #f6f6f6;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
