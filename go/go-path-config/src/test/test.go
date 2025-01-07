@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	// 需要使用 GOPATH 来导入
 	"utils"
 
 	"../../outer"

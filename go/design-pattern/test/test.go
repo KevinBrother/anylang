@@ -1,8 +1,11 @@
 package main
 
-import "design-pattern/create"
+import (
+	"design-pattern/create"
+)
 
 func main() {
+
 	sp := create.GetInstance()
 	sp.AddProduct("apple", 12)
 	sp.AddProduct("Origin", 12)
