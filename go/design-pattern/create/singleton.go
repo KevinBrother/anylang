@@ -7,30 +7,40 @@ import (
 
 var once sync.Once
 
-type ShopCar struct {
+type LazyShopCar struct {
 	product map[string]int
 }
 
-var shopCarInstance *ShopCar
+// 饿汉模式
+/*
+var shopCarInstance = &LazyShopCar{
+	product: make(map[string]int),
+}
+*/
 
-func GetInstance() *ShopCar {
+var shopCarInstance *LazyShopCar
+
+func GetInstance() *LazyShopCar {
 	once.Do(func() {
-		shopCarInstance = &ShopCar{}
+		shopCarInstance = &LazyShopCar{
+			product: make(map[string]int),
+		}
 	})
 
 	return shopCarInstance
 }
 
-func (sc *ShopCar) AddProduct(itemName string, count int) {
-	fmt.Println("add Procuct")
+func (sc *LazyShopCar) AddProduct(itemName string, count int) {
 
 	if _, exists := sc.product[itemName]; !exists {
-		sc.product[itemName] += count
+		sc.product[itemName] = count
 	}
+
+	sc.product[itemName] += count
 }
 
-func (sc *ShopCar) PrintInfo() {
+func (sc *LazyShopCar) PrintInfo() {
 	for k, v := range sc.product {
-		fmt.Println("%s %d", k, v)
+		fmt.Printf("%s %d\n", k, v)
 	}
 }

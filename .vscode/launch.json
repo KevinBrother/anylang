@@ -8,8 +8,16 @@
             "name": "Launch Package",
             "type": "go",
             "request": "launch",
-            "mode": "auto",
-            "program": "${file}"
+            "mode": "debug",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "debug binary",
+            "type": "go",
+            "request": "launch",
+            "mode": "exec",
+            "program": "/Users/caojunjie/workspace/anylang/go/design-pattern/test/test"
         }
     ]
 }
