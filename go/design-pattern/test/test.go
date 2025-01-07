@@ -1,6 +1,6 @@
 package main
 
-import "create"
+import "design-pattern/create"
 
 func main() {
 	sp := create.GetInstance()
@@ -10,7 +10,3 @@ func main() {
 
 	sp.PrintInfo()
 }
-
-// func main() {
-// 	fmt.Println("Hello, World!")
-// }
