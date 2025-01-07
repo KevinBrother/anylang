@@ -10,7 +10,7 @@
             "request": "launch",
             "mode": "debug",
             "program": "${file}",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal" // debug 时可以处理 scanner 的输入
         },
         {
             "name": "debug binary",
