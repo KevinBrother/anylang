@@ -6,6 +6,18 @@ type myStruct struct {
 	name string
 }
 
+type Person struct {
+	name string
+	age  int
+	// children []Children //（值类型切片）每次添加或修改时，都会复制整个结构体， 修改切片中的 Children 不会影响原始的 Children 变量。
+	children []*Children // （指针切片）切片中存储的是指向 Children 结构体的指针，修改切片中元素的字段会直接影响原始的 Children 实例。
+}
+
+type Children struct {
+	cname string
+	cage  int
+}
+
 func swap(a, b myStruct) {
 	tmp := a
 	a = b
@@ -38,4 +50,32 @@ func main() {
 	fmt.Printf("&p1 = %p\n", &p1)
 
 	// fmt.Printf("p1 = %v, p2 = %v\n", p1, p2)
+	c1 := Children{
+		cname: "c1",
+		cage:  12,
+	}
+
+	po1 := Person{name: "p1", age: 12, children: []*Children{
+		&c1,
+	}}
+	po2 := Person{name: "p2", age: 12}
+
+	fmt.Printf("po1 addr: %p \n", &po1)
+	fmt.Printf("po2 addr: %p \n", &po2)
+
+	pointStruct(&po1)
+	valueStruct(po2)
+
+	fmt.Printf("po1.name: %s \n", po1.name)
+	fmt.Printf("po2.name: %s \n", po2.name)
+}
+
+func pointStruct(p *Person) {
+	fmt.Printf("p in pointStruct addr, &p: %p ,p: %p \n", &p, p)
+	p.name = "inner pointStruct p"
+}
+
+func valueStruct(p Person) {
+	fmt.Printf("p in valueStruct addr, &p: %p ,p: %p \n", &p, p)
+	p.name = "inner valueStruct p"
 }
