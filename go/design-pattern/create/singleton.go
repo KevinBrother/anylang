@@ -34,9 +34,9 @@ func (sc *lazyShopCar) AddProduct(itemName string, count int) {
 
 	if _, exists := sc.product[itemName]; !exists {
 		sc.product[itemName] = count
+	} else {
+		sc.product[itemName] += count
 	}
-
-	sc.product[itemName] += count
 }
 
 func (sc *lazyShopCar) PrintInfo() {
