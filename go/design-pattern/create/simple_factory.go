@@ -1,45 +1,61 @@
 package create
 
 import (
-	"errors"
 	"fmt"
 )
 
-type IFactory interface {
+type IBlock interface {
 	Product()
 }
 
-type CircleFactory struct {
+type CircleBlocks struct {
 	name string
 }
 
-type SquareFactory struct {
+func (cb *CircleBlocks) Product() {
+	fmt.Println(cb.name, " Block")
+}
+
+type SquareBlocks struct {
 	name string
 }
 
-func SimpleFactory(name string) (IFactory, error) {
+func (sb *SquareBlocks) Product() {
+	fmt.Println("Square Block")
+}
 
-	if name == "Circle" {
-		cf := CircleFactory{
-			name,
-		}
-		return &cf, nil
-	} else if name == "Square" {
-		cf := SquareFactory{
-			name,
-		}
-		return &cf, nil
+type IFactory interface {
+	createBlock() IBlock
+}
 
-	} else {
-		// 打印错误
-		return nil, errors.New("类型只能是 Circle 或者 Square")
+type CircleBlocksFactory struct{}
+
+func (cf *CircleBlocksFactory) createBlock() IBlock {
+	return &CircleBlocks{
+		name: "Circle",
 	}
 }
 
-func (cf *CircleFactory) Product() {
-	fmt.Println(cf.name, " Block")
+type SquareBlocksFactory struct{}
+
+func (cf *SquareBlocksFactory) createBlock() IBlock {
+	return &SquareBlocks{
+		name: "Square",
+	}
 }
 
-func (cf *SquareFactory) Product() {
-	fmt.Println(cf.name, " Block")
+type SimpleFactory struct {
+	Blocks []IBlock
+}
+
+func (sf *SimpleFactory) AddBlocks(f IFactory, count int) {
+	for i := 0; i < count; i++ {
+		sf.Blocks = append(sf.Blocks, f.createBlock())
+	}
+}
+
+func (sf *SimpleFactory) PrintBlocks() {
+	for _, v := range sf.Blocks {
+		v.Product()
+	}
 }

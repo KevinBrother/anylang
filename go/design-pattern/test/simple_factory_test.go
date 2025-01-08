@@ -1,47 +1,19 @@
 package main
 
 import (
-	"bufio"
 	"design-pattern/create"
-	"fmt"
-	"os"
-	"strconv"
-	"strings"
+	"testing"
 )
 
-func main() {
+func TestSimpleFactory(t *testing.T) {
 
-	cart := create.GetInstance()
-
-	scanner := bufio.NewScanner(os.Stdin)
-
-	for scanner.Scan() {
-
-		input := scanner.Text()
-
-		if input == "" {
-			break
-		}
-
-		parts := strings.Fields(input)
-		itemName := parts[0]
-		quantity, err := strconv.Atoi(parts[1])
-
-		if err != nil {
-			fmt.Printf("转换出错： %v\n", err)
-			continue
-		}
-
-		if len(parts) > 1 {
-			fmt.Sscanf(parts[1], "第二个字符 %d", quantity)
-		}
-
-		cart.AddProduct(itemName, quantity)
+	sf := create.SimpleFactory{
+		Blocks: make([]create.IBlock, 0),
 	}
 
-	// cart.AddProduct("apple", 12)
-	// cart.AddProduct("Origin", 12)
-	// cart.AddProduct("banana", 12)
+	sf.AddBlocks(&create.CircleBlocksFactory{}, 1)
+	sf.AddBlocks(&create.SquareBlocksFactory{}, 2)
+	sf.AddBlocks(&create.CircleBlocksFactory{}, 1)
 
-	cart.PrintInfo()
+	sf.PrintBlocks()
 }
