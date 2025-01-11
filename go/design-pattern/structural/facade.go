@@ -35,10 +35,10 @@ func (a Television) turnOff() {
 type Choice = int
 
 const (
-	Choice1 Choice = 1
-	Choice2 Choice = 2
-	Choice3 Choice = 3
-	Choice4 Choice = 4
+	Choice1 Choice = iota + 1
+	Choice2
+	Choice3
+	Choice4
 )
 
 type DeviceFaced struct {
