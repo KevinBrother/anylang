@@ -6,13 +6,6 @@ import (
 )
 
 func TestArray(t *testing.T) {
-	// fmt.Printf("t addr: %p \n", t)
-	// fmt.Printf("&t addr: %p \n", &t)
-	// array(t)
-	slice(t)
-}
-
-func array(t *testing.T) {
 	// 打印 t 传过来的指针
 	fmt.Printf("t addr: %p \n", t)
 	fmt.Printf("&t addr: %p\n", &t)
@@ -25,7 +18,7 @@ func array(t *testing.T) {
 	t.Log(arr == arr2, arr == arr3)
 }
 
-func slice(t *testing.T) {
+func TestSlice(t *testing.T) {
 	//
 	y := []string{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November"}
 	// 增
