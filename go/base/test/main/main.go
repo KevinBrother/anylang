@@ -2,6 +2,7 @@ package main
 
 import (
 	// "errors"
+	"base_test/concurrency"
 	"fmt"
 	"log"
 
@@ -24,7 +25,20 @@ func HasError() error {
 }
 
 func main() {
-	if err := HasError(); err != nil {
-		fmt.Printf("%+v\n", err)
+	// if err := HasError(); err != nil {
+	// 	fmt.Printf("%+v\n", err)
+	// }
+
+	ch := make(chan int)
+	go concurrency.Generate(ch)
+
+	for i := 0; i < 10; i++ {
+		fmt.Printf("chan is : %v", ch)
+		prime := <-ch
+		fmt.Println("prime:, ", prime)
+		ch1 := make(chan int)
+		go concurrency.Filter(ch, ch1, prime)
+		ch = ch1
 	}
+
 }
