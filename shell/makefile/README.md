@@ -1,6 +1,8 @@
 # Makefile
 
 [参考文档](https://liaoxuefeng.com/books/makefile/makefile-basic/index.html)
+[跟我一起写Makefile](https://seisman.github.io/how-to-write-makefile/)
+[驾驭Makefile]...
 
 ``` bash
 # makefile 中规则的格式 
