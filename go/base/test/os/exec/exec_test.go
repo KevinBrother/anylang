@@ -38,6 +38,7 @@ func TestCommand(t *testing.T) {
 	`))
 
 	cmd := exec.Command("node", "-v")
+	// cmd.Stdout = os.Stdout
 	cmd.Stdout = file
 	str := fmt.Sprintf("pid: %d\n", cmd.Process)
 	file.Write([]byte(str))
