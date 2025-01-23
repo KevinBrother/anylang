@@ -41,6 +41,8 @@ func TestSelect(t *testing.T) {
 			fmt.Println("ch1 data", data)
 		case data := <-ch2:
 			fmt.Println("ch2 data", data)
+		case <-time.After(time.Second * 20):
+			fmt.Println("err: time out")
 		}
 	}
 }
