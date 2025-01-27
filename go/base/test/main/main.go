@@ -2,6 +2,7 @@ package main
 
 import (
 	// "errors"
+	"base_test/concurrency"
 	"fmt"
 	"log"
 	"time"
@@ -41,4 +42,5 @@ func main() {
 	if err := HasError(); err != nil {
 		fmt.Printf("%+v\n", err)
 	}
+
 }
