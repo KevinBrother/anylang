@@ -4,6 +4,7 @@ import (
 	// "errors"
 	"fmt"
 	"log"
+	"time"
 
 	"github.com/pkg/errors"
 )
@@ -23,7 +24,20 @@ func HasError() error {
 	return wrapError
 }
 
+func TestGoroutines() {
+	for i := 0; i < 10; i++ {
+
+		go func() {
+			fmt.Println(i)
+		}()
+	}
+
+	time.Sleep(time.Second * 50)
+}
+
 func main() {
+	TestGoroutines()
+
 	if err := HasError(); err != nil {
 		fmt.Printf("%+v\n", err)
 	}
