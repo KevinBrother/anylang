@@ -7,6 +7,9 @@ declare global {
     electron: ElectronAPI;
     good: string;
   }
+
+  // 将 __ 函数声明移到 global 作用域内
+  function __(str: string): string;
 }
 
 // 声明 electronAPI 常量的类型，但不进行赋值
