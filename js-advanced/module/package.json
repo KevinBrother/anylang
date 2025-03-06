@@ -1,0 +1,22 @@
+{
+  "name": "module",
+  "version": "1.0.0",
+  "description": "## 测试步骤",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "run:esm": "node esm/a.mjs",
+    "run:cjs": "node cjs/a.cjs",
+    "build:esm": "rollup -c rollup.esm.config.js",
+    "build:cjs": "rollup -c rollup.cjs.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "add": "^2.0.6",
+    "rollup": "^4.34.9"
+  }
+}
