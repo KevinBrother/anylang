@@ -18,9 +18,13 @@
   },
   "homepage": "https://github.com/KevinBrother/anylang#readme",
   "dependencies": {
-    "@electron-toolkit/preload": "^3.0.1"
+    "@electron-toolkit/preload": "^3.0.1",
+    "axios": "^1.8.2",
+    "lodash-es": "^4.17.21",
+    "react": "^19.0.0"
   },
   "devDependencies": {
-    "@types/node": "17.0.16"
+    "@types/node": "17.0.16",
+    "@types/react": "^19.0.10"
   }
 }
