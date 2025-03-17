@@ -1,0 +1,71 @@
+/* :root 为全局作用域 */
+:root {
+  --background: #fff;
+  --color: #333;
+  --height-with-unit: 60px;
+  --height-number: 60;
+  --outer-border: 1px solid #333;
+}
+
+
+div {
+  --div-border: 1px solid var(--color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #333;
+    --color: #fff;
+    --outer-border: 1px solid skyblue;
+  }
+  div {
+    /* border: var(--border) */
+    --div-border: 1px dashed var(--color);
+  }
+}
+
+* {
+  background-color: var(--background);
+  color: var(--color);
+}
+
+body {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-rows: var(--height-with-unit) 1fr calc(
+      var(--height-number) * 1.5px
+    );
+
+  header,
+  footer {
+    border: var(--outer-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main {
+    /* 无效，应为作用域在 div 中，可以使用 第二个参数作为 默认值 */
+    border: var(--div-border, 2px solid skyblue);
+    padding: 20px;
+  }
+}
+
+div {
+  border: var(--div-border);
+}
+
+@supports ((--a: 0)) {
+    /* 当浏览器支持 CSS 自定义属性时应用的样式 */
+    :root {
+        --main-color: blue;
+    }
+
+    body {
+        color: var(--main-color);
+    }
+}
+
+@supports ( not (--a: 0)) {
+    /* not supported */
+}
+  
