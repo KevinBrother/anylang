@@ -4,6 +4,7 @@
   "description": "tsconfig.json",
   "main": "src/index.ts",
   "scripts": {
+    "build:namespace": "tsc --outFile ./dist/namespace.js ./src/namespace/test.ts",
     "build": "rm -rf dist && tsc"
   },
   "repository": {

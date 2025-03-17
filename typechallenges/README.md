@@ -1,12 +1,35 @@
 # TypeChallenges
 
+## keywords
+
+[x] interface
+[x] type
+[x] any
+[x] void
+[x] typeof
+[x] keyof
+[x] object
+[ ] unknown
+  
+[ ] never
+[ ] extends
+[ ] infer
+[ ] namespace/module
+[ ] reference
+[ ] declare
+[ ] in
+[ ] is
+[ ] as
+[ ] unique symbol
+
 ## 重难点
 
 ### never
 
 - 表示函数永远不会返回值( return; 为 void)
+- 即当一个函数返回空值时，它的返回值为 void 类型，但是，当一个函数永不返回时（或者总是抛出错误），它的返回值为 never 类型。
 
-``` typescript
+``` ts
 function throwError(message: string): never {
   throw new Error(message);
 }
@@ -24,7 +47,7 @@ function noReturn(message: string): void {
 
 - 表示永远不存在的值的类型
 
-```typescript
+``` ts
 type Fruit = 'apple' | 'banana' | 'cherry';
 function handleFruit(fruit: Fruit) {
     switch (fruit) {
@@ -45,7 +68,7 @@ function handleFruit(fruit: Fruit) {
 
 - never被认为是空的联合类型
 
-``` typescript
+``` ts
 function fn(x: string | number) {
   if (typeof x === "string") {
     // do something
@@ -55,6 +78,14 @@ function fn(x: string | number) {
     x; // has type 'never'!
   }
 }
+
+// 类型系统中的空集：never 是所有类型的子类型，意味着它可以赋值给任何类型，但没有类型可以赋值给 never。
+type P<T> = T extends string ? string : number
+type A = P<never> // nerver
+
+
+type P<T> = [T] extends [string] ? string : number
+type A = P<never> // string
 ```
 
 ### extends
@@ -64,7 +95,7 @@ function fn(x: string | number) {
 
 - Conditional Type Constraints （条件类型约束）
 
-    ``` typescript
+    ``` ts
     type A = A2 extends A1 ? string : number
     
     type MessageOf<T extends { message: unknown }> = T["message"];
@@ -72,13 +103,13 @@ function fn(x: string | number) {
 
 - Inferring Within Conditional Types （在条件类型中推断）
 
-    ``` typescript
+    ``` ts
     type Flatten<Type> = Type extends Array<infer Item> ? Item : Type;
     ```
 
 - Distributive Conditional Types（分布式条件类型 ）
 
-    ``` typescript
+    ``` ts
     type ToArray<Type> = Type extends any ? Type[] : never;
     type StrArrOrNumArr = ToArray<string | number>;  // type StrArrOrNumArr = string[] | number[]
     ```
