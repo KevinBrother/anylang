@@ -1,0 +1,12 @@
+{
+  "name": "ts_import_require",
+  "version": "1.0.0",
+  "main": "math.js",
+  "scripts": {
+    "test": "tsc && node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

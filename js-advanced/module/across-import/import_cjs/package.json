@@ -1,0 +1,13 @@
+{
+  "name": "import_cjs",
+  "version": "1.0.0",
+  "main": "math.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
