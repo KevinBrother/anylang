@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  // 下面两种方式都可以
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "shell: build file",
+      "command": "go build -o ${fileDirname} ${file}",
+      "options": {
+        // "env": {
+        //   "GO111MODULE": "on"
+        // },
+        "cwd": "/Users/caojunjie/workspace/anylang/go/design-pattern"
+      },
+      "group": "build"
+    },
+    {
+      "type": "go",
+      "label": "go: build package",
+      "command": "build",
+      "args": ["-o", "${fileDirname}", "${file}"],
+      "problemMatcher": ["$go"],
+      "options": {
+        // "env": {
+        //   "GO111MODULE": "on"
+        // },
+        "cwd": "/Users/caojunjie/workspace/anylang/go/design-pattern"
+      },
+      "group": "build"
+    }
+  ]
+}

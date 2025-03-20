@@ -1,0 +1,9 @@
+{
+  "go.toolsEnvVars": {
+    "GO111MODULE": "on",
+  },
+  "gopls": {
+    // 取消 import 的 Follow link 
+    // "ui.navigation.importShortcut": "Definition"
+  }
+}
