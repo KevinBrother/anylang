@@ -16,3 +16,7 @@
 import x = require('./xxx.cjs') // it's ok in ts!
 import x from './xxx.cjs' // it's ok in ts!
 ```
+
+## doc
+
+[Interoperability rules](https://www.typescriptlang.org/docs/handbook/modules/reference.html#interoperability-rules)
