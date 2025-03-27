@@ -71,11 +71,11 @@ func main() {
 }
 
 func pointStruct(p *Person) {
-	fmt.Printf("p in pointStruct addr, &p: %p ,p: %p \n", &p, p)
+	fmt.Printf("[在这里修改值会影响到原始值， 对内存影响小] p in pointStruct addr, &p: %p ,p: %p \n", &p, p)
 	p.name = "inner pointStruct p"
 }
 
 func valueStruct(p Person) {
-	fmt.Printf("p in valueStruct addr, &p: %p ,p: %p \n", &p, p)
+	fmt.Printf("[在这里修改值不会影响到原始值， 对内存影响大] p in valueStruct addr, &p: %p ,p: %p \n", &p, p)
 	p.name = "inner valueStruct p"
 }
