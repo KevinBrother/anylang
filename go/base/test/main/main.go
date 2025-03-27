@@ -2,7 +2,6 @@ package main
 
 import (
 	// "errors"
-	"base_test/concurrency"
 	"fmt"
 	"log"
 	"time"
@@ -36,11 +35,11 @@ func TestGoroutines() {
 	time.Sleep(time.Second * 50)
 }
 
-func main() {
-	TestGoroutines()
+// func main() {
+// 	TestGoroutines()
 
-	if err := HasError(); err != nil {
-		fmt.Printf("%+v\n", err)
-	}
+// 	if err := HasError(); err != nil {
+// 		fmt.Printf("%+v\n", err)
+// 	}
 
-}
+// }
