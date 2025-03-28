@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>带格式粘贴示例</title>
+  </head>
+
+  <body>
+    <div
+      id="editable"
+      contenteditable="true"
+      style="border: 1px solid #ccc; padding: 10px; min-height: 200px"
+    >
+      在此处粘贴带有格式的内容
+    </div>
+
+    <script>
+      const editableDiv = document.getElementById("editable");
+      editableDiv.addEventListener("paste", function (e) {
+        e.preventDefault();
+        const clipboardData = e.clipboardData || window.clipboardData;
+        const pastedData = clipboardData.getData("text/html");
+        if (pastedData) {
+          const range = window.getSelection().getRangeAt(0);
+          const parsedFragment = document
+            .createRange()
+            .createContextualFragment(pastedData);
+          range.deleteContents();
+          range.insertNode(parsedFragment);
+        } else {
+          const text = clipboardData.getData("text/plain");
+          document.execCommand("insertText", false, text);
+        }
+      });
+    </script>
+  </body>
+</html>
