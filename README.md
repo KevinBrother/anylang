@@ -32,6 +32,8 @@
 [x] shell
   包括：shell脚本、makefile 规则
 
+[x] html
+
 ## 学习步骤
 
   1. 基础语法
