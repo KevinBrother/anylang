@@ -1,5 +1,7 @@
 # TypeChallenges
 
+## 使用集合的思想理解 ts
+
 ## keywords
 
 [x] interface
@@ -11,7 +13,9 @@
 [x] object
 [ ] unknown
   
-[ ] never
+[x] never：相当于空集，never 是任何类型的子集
+[x] unknow: 相当于全集，是所有类型的父集
+[x] any: 相当于 unknow 和 never 的结合体，any是所有类型的子集，同时也是所有类型的父集。
 [ ] extends
 [ ] infer
 [ ] namespace/module
@@ -118,3 +122,5 @@ type A = P<never> // string
 
 - [TypeScript 类型挑战](https://github.com/type-challenges/type-challenges)
 - [深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/#why)
+- [TS类型体操（一） 基础知识](https://juejin.cn/post/7228833037743915067)
+- [TypeScript 类型体操指北](https://zhuanlan.zhihu.com/p/452657140)
