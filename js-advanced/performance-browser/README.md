@@ -1,5 +1,17 @@
 # performance-browser
 
+## 工具
+
+### 代码检查工具
+
+- [madge](https://github.com/pahen/madge)
+
+### chrome 工具
+
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse?hl=zh-cn)
+- [Performance API](https://developer.mozilla.org/zh-CN/docs/Web/API/Performance_API)
+
 ## 参考文档
 
 [Chrome Performance 页面性能分析指南](https://juejin.cn/post/6850418121548365831)
