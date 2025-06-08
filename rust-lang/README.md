@@ -21,6 +21,8 @@
     rustup doc
     ```
 
+rust-lang
+
 ## 使用 Cargo 创建项目
 
 - 包括 创建、构建、测试、运行甚至部署
