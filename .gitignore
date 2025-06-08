@@ -9,3 +9,4 @@ __pycache__
 kssbox.egg-info
 node_modules
 target
+*.class
