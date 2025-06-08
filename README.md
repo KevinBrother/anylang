@@ -10,6 +10,11 @@
 [x] js
   分支名 javascript
 
+[x] typescript
+  分支名 typescript
+
+[x] css
+
 [x] sql
 
 [x] GO
@@ -26,6 +31,8 @@
 
 [x] shell
   包括：shell脚本、makefile 规则
+
+[x] html
 
 ## 学习步骤
 
