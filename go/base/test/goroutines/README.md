@@ -15,3 +15,7 @@
 - 模式 2: 动态任务数（使用通道控制）
 
 [TestDynamic](./wait-group_test.go#L53)
+
+- 模式 3: 递归任务
+
+[TestRecursion](./wait-group_test.go#L109)
