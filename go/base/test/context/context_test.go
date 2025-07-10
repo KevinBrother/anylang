@@ -18,6 +18,8 @@ func TestContext(t *testing.T) {
 
 	t.Logf("%+v", ctx)
 
+	ctx = context.TODO()
+
 }
 
 // 超时控制
@@ -92,13 +94,17 @@ func processTask(ctx context.Context, id int) {
 func TestStopByDeadline(t *testing.T) {
 	deadline := time.Now().Add(3 * time.Second)
 	ctx := context.Background()
+
 	ctx, cancel := context.WithDeadline(ctx, deadline)
 
 	defer cancel()
 
 	go performCriticalTask(ctx)
 
-	time.Sleep(4 * time.Second)
+	// time.Sleep(4 * time.Second)
+
+	timer := time.NewTimer(4 * time.Second)
+	<-timer.C
 }
 
 func performCriticalTask(ctx context.Context) {
