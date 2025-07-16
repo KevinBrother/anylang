@@ -36,3 +36,18 @@ func TestChannel(t *testing.T) {
 
 	fmt.Println("done")
 }
+
+func TestClose(t *testing.T) {
+	var list []int
+	done := make(chan struct{})
+
+	go func(l int) {
+		<-done // 等待主线程写完
+		fmt.Printf("current len: %d\n", len(list))
+	}(len(list))
+
+	list = append(list, 1)
+	close(done)
+
+	time.Sleep(time.Second)
+}
