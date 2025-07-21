@@ -17,3 +17,12 @@ go test -v -run Marshal base_test/json
 # 测试具体函数（需要指定路径）
 go test -v -run ^TestMarshal$ base_test/json
 ```
+
+## TODO
+
+[ ] mutex
+    [ ] RecursiveMutex
+    [ ] safeMap
+    [ ] safeSlice
+
+[ ] hchan
