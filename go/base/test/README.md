@@ -18,6 +18,14 @@ go test -v -run Marshal base_test/json
 go test -v -run ^TestMarshal$ base_test/json
 ```
 
+## 设置代理
+
+- 设置阿里云代理
+
+``` bash
+go env -w GOPROXY=<https://mirrors.aliyun.com/goproxy/,direct>
+```
+
 ## TODO
 
 [ ] mutex
