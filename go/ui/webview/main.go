@@ -16,7 +16,7 @@ func main() {
 	})
 
 	// 直接加载 HTML 内容，而不只是 URL
-	w.Navigate("data:text/html,<html><body><h1>Go + WebView</h1><button onclick='callGo()'>计算</button><script>async function callGo(){ const res = await add(1, 2); alert(res); }</script></body></html>")
+	w.Navigate("data:text/html,<html><body><h1>Go + WebView</h1><button onclick='callGo()'>this is button</button><script>async function callGo(){ const res = await add(1, 2); alert(res); }</script></body></html>")
 
 	w.Run()
 }

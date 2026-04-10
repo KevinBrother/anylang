@@ -1,4 +1,4 @@
-module native-ui
+module webview-ui
 
 go 1.22.6
 
